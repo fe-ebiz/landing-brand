@@ -1,0 +1,322 @@
+@charset "utf-8";
+
+@import "./variables";
+
+// common
+@mixin bx($post: relative) {
+	position: $post;
+	box-sizing: border-box;
+}
+
+@mixin centerThis($post: relative, $wd: 1180px, $ht : auto, $pd : 0) {
+	position: $post;
+	box-sizing: border-box;
+	width: $wd;
+    height: $ht;
+	margin: 0 auto;
+    padding: $pd;
+}
+
+// menu on, hover
+@mixin menuOn($post : absolute, $wd : 100%, $ht : 3px, $t : auto, $r : auto, $b : 0, $l : 0, $mg : 0, $bg : $bg-blue-1) {
+    display: block;
+    position: $post;
+    width: $wd;
+    height: $ht;
+    top: $t;
+    right: $r;
+    bottom: $b;
+    left: $l;
+    margin: $mg;
+    background: $bg;
+}
+
+// arrow right
+@mixin arrow-r($p-l : 5px, $wh : 6px, $bd-c : $bc-white-1, $t : -1px, $r : auto, $b : auto, $l : auto){
+    position: relative;
+    padding-left: $p-l;
+    &:after {
+        content: '';
+        position: relative;
+        display: inline-block;
+        width: $wh;
+        height: $wh;
+        top: $t;
+        right: $r;
+        bottom: $b;
+        left: $l;
+        border: 1px solid $bd-c;
+        border-top: 0;
+        border-left: 0;
+        -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+}
+
+// arrow right
+@mixin arrow-r-ie8($p-l : 5px, $f-s : 14px, $bd-c : $bc-gray-7){
+    position: relative;
+    padding-left: $p-l;
+    &:before {
+        content: '>';
+        font-size: $f-s;
+        color: $bd-c;
+    }
+    &:after {
+        content: none;
+    }
+}
+
+
+// ps
+@mixin p-ps($p-l : 20px, $f-s : 17px, $f-l : 26px, $f-c : $fc-gray-2, $bg-s : 17px auto){
+    position: relative;
+    display: inline-block;
+    padding-left: $p-l;
+    font-size: $f-s;
+    font-weight: 300;
+    line-height: $f-l;
+    color: $f-c;
+    background: url(http://img.ocean2you.co.kr/renew/group/pic_i.png) no-repeat 0 center;
+    background-size: $bg-s;
+}
+
+//x-btn
+@mixin x-btn($wh : 36px, $c-w : 30px, $c-l : 5px, $bg : $bg-green-1, $c-bg : $bg-white-1){
+    position: absolute;
+    display: block;
+    width: $wh;
+    height: $wh;
+    top: 0; 
+    right: 0; 
+    background: $bg;  
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        width: $c-w;
+        height: 1px;
+        top: ($c-w/2);
+        left: $c-l;
+        background: $c-bg;
+    }
+}
+
+//x-btn
+@mixin x-btn-ie8($wh : 36px, $c-w : 30px, $c-l : 5px, $f-c : 26px, $bg : $bg-green-1, $c-bg : $bg-white-1){
+    width: $wh;
+    height: $wh;
+    top: 0; 
+    right: 0; 
+    text-align: center;
+    background: $bg;  
+    &:before {
+        position: relative;
+        content: 'X';
+        width: auto;
+        height: auto;
+        font-size: $f-c;
+        font-weight: 500;
+        color: $c-bg;
+        background: none;
+    }
+    &:after {
+        content: none;
+    }
+}
+
+//chk
+@mixin chk($w : 3px, $bg-c : $bg-blue-1, $l : 6px, $r-l : 12px, $m-t : -3px, $l-h : 9px, $r-h : 12px){
+    position: relative;
+    &:before, &:after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        width: $w;
+        top: 50%;
+        background: $bg-c;
+    }
+    &:before {
+        height: $l-h;
+        left: $l;
+        margin-top: $m-t;
+        -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+    &:after {
+        height: $r-h;
+        left: $r-l;
+        margin-top: ($m-t+$m-t);
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+}
+
+//chk ie8
+@mixin chk-ie8($bg-c : $bg-blue-1, $l : 0, $m-t : -15px){
+    position: relative;
+    &:before {
+        content: 'V';
+        display: inline-block;
+        position: absolute;
+        width: auto;
+        height: auto;
+        left: $l;
+        top: 50%;
+        margin-top: $m-t;
+        font-size: 16px;
+        font-weight: bold;
+        color: $bg-c;
+        background: none;
+    }
+    &:after {
+        content: none;
+    }
+}
+
+// bsSlider
+@mixin bsSider($a-wd : 50px, $a-lr : 30px, $p-bt : 40px, $p-wd : 12px, $p-pd : 0 10px, $p-bw : 2px){
+    .bxBox {
+        @include bx;
+        .bx-wrapper {
+            position: relative; 
+            margin: 0 auto; 
+            margin-bottom: 0;
+            border: none; 
+            width: 100%; 
+            box-shadow: none;
+            
+            .bx-viewport {
+                border: none; 
+                box-shadow: none; 
+                left: 0; 
+                background: none;
+            }
+
+            .bx-controls {
+                .bx-controls-direction {
+                    position: absolute; 
+                    width: 100%;
+                    top: 50%;
+                    a {
+                        display: block;
+                        position: absolute;
+                        width: (($a-wd)+1);
+                        height: $a-wd;
+                        margin-top: -($a-wd/2);
+                        &.bx-prev {
+                            left: $a-lr;
+                            background: url(http://img.ocean2you.co.kr/btn_prev2.png) no-repeat center;
+                            background-size: auto $a-wd;
+                        }
+                        &.bx-next {
+                            right: $a-lr;
+                            background: url(http://img.ocean2you.co.kr/btn_next2.png) no-repeat center;
+                            background-size: auto $a-wd;
+                        }
+                    }
+                }
+
+                .bx-controls-auto {
+                    display: none;
+                }
+
+                //bullet
+                &.bx-has-controls-auto.bx-has-pager {
+                    .bx-pager {
+                        z-index: 99;
+                        position: absolute;
+                        display: block;
+                        width: 100%;
+                        bottom: $p-bt;
+                        text-align: center;
+                        .bx-pager-item {
+                            width: $p-wd;
+                            padding: $p-pd;
+                            text-align: center;
+                            vertical-align: middle;
+
+                            .bx-pager-link {
+                                width: (($p-wd)-($p-bw));
+                                height: (($p-wd)-($p-bw));
+                                margin: 0 auto;
+                                border-radius: 50%;
+                                background: $bg-white-1;
+
+                                &.active, &:hover {
+                                    border: $p-bw solid $bc-white-1;
+                                    background: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        &.main {
+            .bx-wrapper {
+                .bx-controls {
+                    .bx-controls-direction {
+                        a {
+                            &.bx-prev {
+                                background: url(http://img.ocean2you.co.kr/renew/landing-brand/btn_prev.png) no-repeat center; 
+                                background-size: auto $a-wd;
+                            }
+                            &.bx-next {
+                                background: url(http://img.ocean2you.co.kr/renew/landing-brand/btn_next.png) no-repeat center;
+                                background-size: auto $a-wd;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// table base
+@mixin table-base($b-c : none, $f-s : 16px, $pd : 20px 0 17px, $wd : 140px, $s-l-c : $fc-gray-3, $p-l-bg : $bg-gray-3, $p-t-pl : 17px, $s-t-c : $fc-gray-1){
+    .tb-row {
+        @include bx;
+        width: 100%;
+        border: 1px solid $b-c;
+        background: $bg-white-1;
+
+        li {
+            display: table;
+            border-collapse: collapse;
+            width: 100%;
+            word-break: keep-all;
+
+            p {
+                display: table-cell;
+                padding: $pd;
+                font-size: $f-s;
+
+                &.p-lbl {
+                    width: $wd;
+                    text-align: center;
+                    vertical-align: middle;
+                    color: $s-l-c;
+                    background: $p-l-bg;
+                }
+                &.p-txt {
+                    padding-left: $p-t-pl;
+                    text-align: left;
+                    color: $s-t-c;
+                }
+            }
+            &.all {
+                width: 100%;
+            }
+        }
+    }
+}
+

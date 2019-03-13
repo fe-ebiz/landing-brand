@@ -1,0 +1,58 @@
+@charset "utf-8";
+// --------------
+// Scss변수
+// --------------
+//$font-stack: "Nanum Gothic", Dotum, Sans-serif;
+$font-ntss: "Noto Sans KR", Sans-serif;
+
+/* border color */
+$bc-black-1 : #414141;
+
+$bc-gray-1 : #5b5e62;
+$bc-gray-2 : #888;
+$bc-gray-3 : #ddd;
+$bc-gray-4 : #bebebe;
+$bc-gray-5 : #ccc;
+$bc-gray-6 : #bfbfbf;
+$bc-gray-7 : #666;
+$bc-gray-8 : #e0e0e0;
+
+$bc-white-1 : #fff;
+
+$bc-blue-1 : #5789e3;
+
+$bc-green-1 : #01374f;
+
+/* bg color */
+$bg-black-1 : #414141;
+$bg-black-2 : #333;
+
+$bg-gray-1 : #888;
+$bg-gray-2 : #f8f8f8;
+$bg-gray-3 : #eee;
+$bg-gray-4 : #f5f5f5;
+$bg-gray-5 : #e4e4e4;
+$bg-gray-6 : #e0e0e0;
+$bg-gray-7 : #666;
+
+$bg-white-1 : #fff;
+
+$bg-blue-1 : #5a8be4;
+$bg-blue-2 : #3669c6;
+
+$bg-green-1 : #01374f;
+
+/* font color */
+$fc-black-1 : #333;
+
+$fc-gray-1 : #666;
+$fc-gray-2 : #888;
+$fc-gray-3 : #555;
+
+$fc-white-1: #fff; 
+
+$fc-blue-1: #5a8be4;
+$fc-blue-2: #33ffff;
+
+$fc-red-1 : #f21850;
+$fc-red-2 : #f43e3e;

@@ -1,0 +1,2639 @@
+@charset "utf-8";
+// 페이지 공통 common
+@import "parts/common";
+
+body {
+    font-family: $font-ntss; 
+    letter-spacing: -0.5px; 
+    color: #555;
+}
+a {
+    color: inherit;
+}
+input, select, textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+    border: 0; 
+    border-radius: 0;
+    font-family: $font-ntss; 
+}
+
+select::-ms-expand {
+    display: none; 
+}
+
+
+/* mobile */
+@media (max-width: 767px) {
+    .show-xs {
+        display: block;
+    }
+    .inline-xs {
+        display: inline-block;
+    }
+    .hidden-xs, .inline-md {
+        display: none;
+    }
+    
+    .container {
+        @include centerThis($wd : 100%, $pd : 0 16px);
+    }
+    
+    /* header */
+    .header {
+        z-index: 9999;
+        @include centerThis($post: absolute, $wd : 100%);
+        border-bottom: 1px solid $bc-gray-1;
+        
+        .header-area {
+            @include centerThis($wd : 100%, $pd : 0);
+            text-align: center;
+            
+            //logo
+            .logo-box {
+                @include bx;
+                display: block;
+                text-align: center;
+                margin-top: 2%;
+                .logo-img {
+                    display: inline-block;
+                    width: 20.7%;
+                    min-width: 74px;
+                }
+            }
+            
+            //mobile tit menu
+            .tit-box {
+                @include centerThis($wd : 100%, $pd : 0 16px);
+                border-bottom: 1px solid $bc-gray-1;
+                .tit {
+                    font-size: 14px;
+                    line-height: 46px;
+                    text-align: left;
+                    color: $fc-blue-1;
+                }
+            }
+            
+            //menu
+            .nav {
+                @include centerThis($wd : auto, $pd : 0 16px);
+                display: inline-block;
+                text-align: center;
+                
+                .nav-list {
+                    li {
+                        float: left;
+                        padding: 0 9px 0 10px;
+                        a {
+                            @include bx;
+                            display: block;
+                            font-size: 13px;
+                            font-weight: 300;
+                            line-height: 45px;
+                            color: $fc-white-1;
+                        }
+                        &.on a {
+                            font-weight: 500;
+                            &:before {
+                                content: '';
+                                @include menuOn($ht : 4px, $b : -1px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+        &.on {
+            position: fixed;
+            top: 0;
+            left: 0;
+            border-bottom: 0;
+            background: rgba(0, 0, 0, 0.75);
+            box-shadow: 0 1px 8px 2px rgba(0,0,0,.2);
+            .header-area {
+                .logo-box {
+                    display: none;
+                }
+            }
+        }
+    }
+    
+    
+    /* contents */
+    .contents {
+        
+        section {
+            .tit {
+                img {
+                    width: 100%;
+                    min-width: 295px;
+                    max-width: 360px;
+                    margin: 0 auto;
+                }
+            }
+            .h3-tit {
+                font-size: 20px;
+                font-weight: bold;
+                line-height: 20px;
+                color: $fc-black-1;
+            }
+            .sub-tit {
+                margin: 10px auto 15px;
+                font-size: 13px;
+                line-height: 16px;
+                letter-spacing: 0;
+                word-break: keep-all;
+                color: $fc-gray-3;
+            }
+        }
+        
+        //메인
+        .main-sec {
+            @include bx;
+            padding: 142px 0 22px;
+            background: url(http://img.ocean2you.co.kr/renew/landing-brand/bg_visual.jpg) no-repeat center center;
+            background-size: cover;
+            
+            @include bsSider($p-wd : 10px, $p-pd : 0 7px, $p-bt : 17px);
+            .bxBox.main {
+                margin: 16px -16px 0;
+                
+                //bx slider
+                .bxS {
+                    li {
+                        @include bx;
+                        width: 100%;
+                        height: 230px;
+                        background: url(http://img.ocean2you.co.kr/renew/event/event_geomdo.jpg) no-repeat center center; 
+                        background-size: cover;
+                        
+                        .fc-li-box {
+                            @include bx;
+                            display: table;
+                            width: 100%;
+                            height: 100%;
+                            padding: 0 20px;
+                            background: rgba(0, 0, 0, 0.65);
+                            
+                            .fc-txt-box {
+                                display: table-cell;
+                                width: 100%;
+                                text-align: center;
+                                vertical-align: middle;
+                                
+                                p {
+                                    letter-spacing: -1px;
+                                    word-break: keep-all;
+                                    color: $fc-white-1;
+                                    
+                                    &.fc-li-tit {
+                                        margin-bottom: 10px;
+                                        font-size: 16px;
+                                        line-height: 22px;
+                                    }
+                                    &.fc-li-txt {
+                                        font-size: 13px;
+                                        line-height: 22px;
+                                        word-break: keep-all;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                .bx-wrapper { 
+                    .bx-controls {
+                        .bx-controls-direction {
+                            a {
+                                display: none;
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+        
+        //대회안내
+        .info-sec {
+            padding: 32px 0 0;
+            text-align: center;
+
+            .table-box { 
+                @include table-base($f-s : 13px, $pd : 8px 0 6px, $wd : 65px, $p-t-pl : 10px, $s-l-c : $fc-gray-1);
+                .tb-tit {
+                    height: 34px;
+                    font-size: 15px;
+                    font-weight: 500;
+                    line-height: 34px;
+                    color: $fc-white-1;
+                    background: $bg-blue-2;
+                }
+                .tb-row {
+                    li {
+                        float: left; 
+                        &:nth-child(n+3) {
+                            width: 50%;
+                        }
+                        p {
+                            border-bottom : 1px solid;
+                            &.p-lbl {
+                                border-color: $bc-gray-4;
+                            }
+                            &.p-txt {
+                                border-color: $bc-gray-5;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        //위치안내
+        .loca-sec {
+            padding: 30px 0 40px;
+            text-align: left;
+
+            .loca-tit {
+                padding-left: 20px;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 18px;
+                color: $fc-black-1;
+                background: url(http://img.ocean2you.co.kr/renew/landing-brand/ico_loca.png) no-repeat 0 center;
+                background-size: auto 18px;
+            }
+
+            .loca-box {
+                @include bx;
+                margin-top: 9px;
+
+                .loca-map {
+                    @include bx;
+                    width: 100%;
+                    overflow: hidden;
+                    border: 1px solid $bc-gray-6;
+                    img {
+                        @include bx;
+                        width: 100%;
+                    }
+                }
+
+                .table-box {
+                    margin-top: 17px;
+                    @include table-base($b-c : $bc-gray-5, $f-s : 12px, $pd : 10px 0 10px, $wd : 80px, $p-l-bg : $bg-gray-4, $p-t-pl : 11px);
+                    .tb-row {
+                        li {
+                            //min-height: 70px;
+                            border-top: 1px solid $bc-gray-5;
+                            &:first-child {
+                                border-top: 0;
+                            }
+                            p {
+                                line-height: 16px;
+                                &.p-lbl {
+                                    border-right: 1px solid $bc-gray-5;
+                                }
+                                &.p-txt {
+                                    .s-txt {
+                                        display: inline-block;
+                                        width: 24px;
+                                        height: 12px;
+                                        margin-right: 2px;
+                                        font-size: 10px;
+                                        text-align: center;
+                                        line-height: 12px;
+                                        color: $fc-gray-1;
+                                        border: 1px solid $bc-gray-5;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        //숙소안내&객실안내
+        .visit-sec {
+            text-align: center;
+            
+            //숙소안내
+            .visit-area {
+                padding: 30px 0 23px;
+                background: url(http://img.ocean2you.co.kr/renew/landing-brand/bg_visit.jpg) repeat top center;
+                .sub-tit {
+                    margin-bottom: 20px;
+                    color: $fc-white-1;
+                    > span {
+                        color: $fc-blue-2;
+                    }
+                }
+
+                .visit-box {
+                    margin: 0 -16px;
+                    .visit-tb-box {
+                        @include bx;
+                        width: 100%;
+                        //min-height: 416px;
+                        margin: 0 auto;
+                        padding: 80% 0 5%;
+                        background: url(http://img.ocean2you.co.kr/renew/m/landing-brand/bg_visit_box.jpg) no-repeat center center;
+                        background-size: cover;
+                        .table-box {
+                            @include bx;
+                            @include table-base($f-s : 12px, $b-c : $bc-blue-1, $pd : 8px 0 7px, $wd : 32%, $s-l-c : $fc-white-1, $p-l-bg : $bg-blue-2, $p-t-pl : 10px);
+                            width: 100%;
+                            padding: 0 22px;
+                            .tb-row {
+                                li {
+                                    float: left;
+                                    p {
+                                        @include bx;
+                                        border-top: 1px solid $bc-blue-1;
+                                        &.p-lbl {
+                                            border-color: $bc-white-1;
+                                        }
+
+                                        &.p-all {
+                                            padding: 8px 10px 7px 23px;
+                                            text-indent: -14px;
+                                            text-align: left;
+                                            > em {
+                                                color: $fc-red-1;
+                                            }
+                                        }
+
+                                        //btn
+                                        .btn-link {
+                                            position: absolute;
+                                            display: inline-block;
+                                            height: 20px;
+                                            top: 50%; 
+                                            right: 5px;
+                                            margin: -10px 0 0;
+                                            padding: 0 6px;
+                                            font-size: 10px;
+                                            line-height: 20px;
+                                            border-radius: 3px;
+                                            background: $bg-gray-5;
+                                            .ic-rArrow { 
+                                                @include arrow-r($p-l : 2px, $wh : 3px, $bd-c : $bc-gray-7, $t : -2px);
+                                            }
+                                        }
+                                    }
+                                    &.nth-1 {
+                                        p {
+                                            &.p-lbl {
+                                                border-top: 0;
+                                            }
+                                            &.p-txt {
+                                                border-top: 0;
+                                            }
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            //객실안내
+            .room-area {
+                @include bx;
+                padding: 22px 0 42px;
+                text-align: center;
+
+                .sub-tit {
+                    margin: 7px auto 14px;
+                }
+
+                .ul-list {
+                    .li-item {
+                        @include bx;
+                        width: 100%; 
+                        margin-top: 20px;
+                        
+                        &:first-child {
+                            margin-top: 0;
+                        }
+                        figure {
+                            img {
+                                width: 100%;
+                            }
+                        }
+
+                        div[class*='d-row'] {
+                            position: relative;
+                            text-align: left;
+
+                            &.d-row-1 {
+                                margin-top: 5px;
+                                .s-name {
+                                    position: relative;
+                                    top: 3px;
+                                    font-size: 16px; 
+                                    font-weight: bold;
+                                    line-height: 1.1;  
+                                    letter-spacing: -0.5px;
+                                    color: $fc-gray-3;  
+                                }
+                                .a-btn {
+                                    z-index: 1;
+                                    position: absolute;
+                                    box-sizing: border-box;
+                                    display: inline-block;
+                                    min-width: 48px;
+                                    min-height: 43px;
+                                    top: 0;
+                                    right: 0; 
+                                    padding: 2.5%;
+                                    font-size: 11px;
+                                    line-height: 1.3;
+                                    letter-spacing: -0.5px;
+                                    text-align: center;
+                                    color: $fc-white-1;
+                                    background: $bg-green-1;
+                                }
+                            }
+
+                            &.d-row-2 {
+                                @include bx;
+                                margin-top: 8px;
+                                padding-left: 30px;
+                                font-size: 13px;
+                                line-height: 1.4;
+                                letter-spacing: -0.5px;
+                                color: $fc-gray-1;
+                                
+                                &:before {
+                                    content: '';
+                                    position: absolute;
+                                    display: block;
+                                    width: 25px;
+                                    height: 1px;
+                                    top: 8px;
+                                    left: 0;
+                                    background: $bg-gray-7;
+                                }
+                            }
+                        }
+
+                        @include bsSider($a-wd : 26px, $a-lr : 10px);
+
+                        .bxBox {
+                            z-index: 2;
+                            position: absolute;
+                            visibility: hidden;
+                            overflow: hidden;
+                            width: 100%;
+                            height: 100%;
+                            top: 0;
+                            left: 0;
+                            border: 4px solid $bc-green-1;
+                            .bx-wrapper {
+                                height: 100%;
+                                img {
+                                    position: relative;
+                                }
+                            }
+
+                            //객실안내 텍스트
+                            .txt-box { 
+                                position: absolute;
+                                width: 100%;
+                                top: 40%;
+                                left: 0;
+                                vertical-align: middle;
+                                text-align: center;
+                                p {
+                                    letter-spacing: -0.2px;
+                                    color: $fc-white-1;
+                                    &.p1 {
+                                        font-size: 15px;
+                                        font-weight: 500;
+                                    }
+
+                                    &.p2 {
+                                        margin-top: 4px;
+                                        font-size: 12px;
+                                        line-height: 1.6;
+                                    }
+
+                                }
+
+                            }
+
+                            //객실안내 X버튼
+                            .a-x {
+                                @include x-btn;
+                            }
+                        }
+                    }
+                }
+
+                .p-box {
+                    margin-top: 5px;
+                    padding-top: 2px;
+                    border-top: 1px solid $bc-gray-8;
+                    .p-ps {
+                        @include p-ps($f-s : 12px);
+                    }
+                }
+
+                .btn-box {
+                    max-width: 500px;
+                    margin: 16px auto 0;
+                    padding: 0 12px;
+                    text-align: center;
+                    a {
+                        display: inline-block;
+                        float: left;
+                        width: 48%;
+                        img {
+                            width: 100%;
+                        }
+                        & + a {
+                            float: right;
+                        }
+                    }
+                }
+            }
+        }
+        
+        //숙소예약 문의
+        .view-sec {
+            padding: 30px 0 40px;
+            text-align: center;
+            background: $bg-gray-6;
+            
+            .sub-tit {
+                em {
+                    color: $fc-red-2;
+                }
+            }
+            
+            .form-area {
+                @include bx;
+                width: 100%;
+                max-width: 470px;
+                margin: 0 auto;
+                color: $fc-gray-3;
+                
+                .f-top {
+                    padding: 5px 0;
+                    font-size: 12px;
+                    text-align: right;
+                    .i-chk { 
+                        padding-left: 20px;
+                        @include chk($l : 6px, $r-l : 11px, $l-h : 7px, $r-h : 10px);
+                    }
+                }
+                
+                .ul-tb {
+                    padding: 5px 0;
+                    border: 1px solid $bc-gray-5;
+                    border-left: 0;
+                    border-right: 0;
+                    
+                    li {
+                        @include bx;
+                        display: table;
+                        width: 100%;
+                        padding: 5px 5px 5px 10px;
+                        text-align: left;
+                        
+                        @mixin form-com {
+                            @include bx;
+                            float: left;
+                            display: inline-block;
+                            height: 28px;
+                            font-size: 13px;
+                            line-height: 28px;
+                        }
+                        .lbl {
+                            @include form-com;
+                            width: 20%;
+                            padding-left: 10px;
+                            &.i-chk { 
+                                @include chk($l : -5px, $r-l : 0px, $l-h : 7px, $r-h : 10px);
+                            }
+                        }
+                        .in-txt {
+                            @include form-com;
+                            width: 80%;
+                            //max-width: 360px;
+                            padding: 0 6px;
+                            vertical-align: middle;
+                            border: 1px solid $bc-black-1;
+                            background: $bg-white-1;
+                            &.sel-box {
+                                margin-left: 2%;
+                                background: $bg-white-1 url(http://img.ocean2you.co.kr/renew/group/i_dArr.png) no-repeat;
+                                background-size: 14px auto;
+                                background-position: 92% 10px;
+                            }
+                            &.txt-area {
+                                resize: none;
+                                height: 80px;
+                            }
+                            & + .lbl {
+                                margin-top: 10px;
+                            }
+                        }
+                        
+                        .phone-box {
+                            @include form-com;
+                            padding-top: 10px;
+                            width: 80%;
+                            height: auto;
+                            .in-txt {
+                                float: left;
+                                width: 27.5%;
+                            }
+                            .mg- {
+                                float: left;
+                                display: inline-block;
+                                width: 4.1%; 
+                                height: 1px;
+                                margin: 13px 2.3% 0;
+                                background: $bg-black-1;
+                            }
+                        }
+                        
+                        &.day-box {
+                            .in-txt {
+                                width: 39%;
+                                //max-width: 175px;
+                            }
+                        }
+                        &.etc {
+                            .lbl {
+                                line-height: 80px;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .btn-box {
+                @include bx;
+                display: inline-block;
+                margin: 10px auto 0;
+                
+                [class*="btn-"] {
+                    @include bx;
+                    display: block;
+                    //overflow: hidden;
+                    float: left;
+                    width: 50%;
+                    height: 40px;
+                    font-size: 16px;
+                    line-height: 40px;
+                    vertical-align: middle;
+                }
+                
+                .btn-robo {
+                    .g-recaptcha {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        -webkit-transform:scale(0.55); 
+                        transform:scale(0.55); 
+                        -webkit-transform-origin:0 0;
+                        transform-origin:0 0;
+                    }
+                }
+                
+                .btn-com {
+                    float: right;
+                    width: 48%;
+                    text-align: center;
+                    color: $fc-white-1;
+                    border-radius: 5px;
+                    background: $bg-black-2;
+                }
+            }
+        }
+    }
+    
+    
+    /* footer */
+    .footer {
+        @include centerThis($wd : 100%, $pd : 0 16px);
+        text-align: center;
+        
+        .footer-area {
+            @include bx;
+            display: inline-block;
+            padding: 23px 0 25px;
+            
+            /* 문의 영역 */
+            .call-area {
+                
+                .call-box {
+                    @include bx;
+                    float: left;
+                    width: 33.3%;
+                    height: 120px;
+                    padding: 6px 5px;
+                    border: 1px solid $bc-gray-3;
+                    border-left: 0;
+                    background: $bg-gray-2;
+                    &:first-child {
+                        border-left: 1px solid $bc-gray-3;
+                    }
+                    
+                    p {
+                        text-align: center;
+                        &.p-1 {
+                            font-size: 16px;
+                            font-weight: bold;
+                            line-height: 24px;
+                            color: $fc-gray-1;
+                        }
+                        &.p-2 {
+                            font-size: 12px;
+                            font-weight: 300;
+                            line-height: 16px;
+                            letter-spacing: -1.3px;
+                            color: $fc-gray-2;
+                            span {
+                                font-size: 10px;
+                                line-height: 12px;
+                                letter-spacing: -0.5px;
+                                &.bul {
+                                    position: relative;
+                                    display: block;
+                                    padding-left: 3px;
+                                    &:before {
+                                        content: '';
+                                        display: inline-block;
+                                        position: absolute;
+                                        width: 1px;
+                                        height: 1px;
+                                        top: 50%;
+                                        margin: 0 0 0 -3px;
+                                        background: $bg-gray-1;
+                                    }
+                                }
+                            }
+                            
+                        }
+                        &.p-call {
+                            padding: 2px 0;
+                            font-size: 13px;
+                            font-weight: bold;
+                            line-height: 16px;
+                            color: $fc-gray-1;
+                        }
+                    }
+                }
+            }
+            
+            
+            /* 사업자 */
+            .adr-area {
+                @include bx;
+                padding: 20px 0 0 0;
+                text-align: left;
+                
+                .adr-box {
+                    box-sizing: border-box;
+                    display: table;
+                    
+                    & + .adr-box {
+                        padding-top: 10px;
+                    }
+                    
+                    @mixin table-cell {
+                        display: table-cell;
+                        vertical-align: middle;
+                    }
+                    
+                    .f-logo {
+                        @include table-cell;
+                        width: 70px;
+                        img {
+                            width: 100%;
+                        }
+                        .f-logo-txt {
+                            position: absolute;
+                            display: block;
+                            width: 70px;
+                            bottom: -5px;
+                            font-size: 12px;
+                            text-align: center;
+                            letter-spacing: -1.2px;
+                            color: #aaa;
+                        }
+                    }
+                    address {
+                        @include table-cell;
+                        padding-left: 10px;
+                        font-size: 12px;
+                        font-weight: 300;
+                        line-height: 16px;
+                        letter-spacing: -1px;
+                        color: $fc-gray-2;
+                        
+                        em {
+                            display: block;
+                            padding-bottom: 2px;
+                            font-weight: 500;
+                            color: $fc-gray-1;
+                        }
+                        .i-l {
+                            position: relative;
+                            display: block;
+                        }
+                        
+                        .x-i-l {
+                            position: relative;
+                            display: inline-block;
+                            width: 10px;
+                            height: 100%;
+                            &:before{
+                                content: '';
+                                @include menuOn($wd : 1px, $ht : 12px, $t : 50%, $b : auto, $l : 50%, $mg : -10px 0 0 0, $bg : $bg-gray-1)
+                            }
+                        }
+                    }
+                }
+            }
+            
+            /* copy */
+            .copy {
+                padding-top: 15px;
+                font-size: 12px;
+                font-weight: 300;
+                line-height: 14px;
+                color: $fc-gray-2;
+            }
+        }
+    }
+}
+
+/* mobile iphone5 + 350 */
+@media (max-device-width: 352px) {
+    
+    .container {
+        padding: 0 13px;
+    }
+    
+    /* header */
+    .header {
+        .header-area {
+            
+            //mobile tit menu
+            .tit-box {
+                padding: 0 13px;
+                .tit {
+                    font-size: 13px;
+                }
+            }
+            
+            //menu
+            .nav {
+                padding: 0 13px;
+                .nav-list {
+                    li {
+                        padding: 0 8px 0 9px;
+                        a {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    /* contents */
+    .contents {
+        //메인
+        .main-sec {
+            .bxBox.main {
+                margin: 16px -13px 0;
+            }
+        }
+        
+         //대회안내
+        .info-sec {
+            .table-box { 
+                .tb-tit {
+                    font-size: 14px;
+                }
+                .tb-row {
+                    li {
+                        p {
+                            font-size: 12px;
+                            &.p-lbl {
+                                width: 60px;
+                            }
+                            &.p-txt {
+                                padding-left: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        //위치안내
+        .loca-sec { 
+            .loca-box {
+                .table-box {
+                    .tb-row {
+                        li {
+                            p {
+                                letter-spacing: -0.7px;
+                                &.p-lbl {
+                                    width: 63px;
+                                }
+                                &.p-txt {
+                                    padding-left: 7px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        //숙소안내&객실안내
+        .visit-sec {
+            //숙소안내
+            .visit-area {
+                .visit-box {
+                    margin: 0 -13px;
+                    .visit-tb-box {
+                        min-height: 370px;
+                        //padding: 67% 0 5%;
+                        .table-box {
+                            padding: 0 20px;
+                            .tb-row {
+                                li {
+                                    p {
+                                        font-size: 11px;
+                                        &.p-all {
+                                            text-indent: -13px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        //숙소예약 문의
+        .view-sec {
+            .btn-box {
+                .btn-robo {
+                    .g-recaptcha {
+                        -webkit-transform:scale(0.5); 
+                        transform:scale(0.5); 
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    /* footer */
+    .footer {
+        padding: 0 13px;
+        
+        .footer-area {
+            @include bx;
+            display: inline-block;
+            
+            /* 문의 영역 */
+            .call-area {
+                
+                .call-box {
+                    @include bx;
+                    height: 110px;
+                    padding: 4px 3px;
+                    
+                    p {
+                        &.p-1 {
+                            font-size: 15px;
+                            line-height: 22px;
+                        }
+                        &.p-2 {
+                            font-size: 11px;
+                            line-height: 14px;
+                            letter-spacing: -1.3px;
+                            span {
+                                font-size: 10px;
+                                line-height: 12px;
+                                letter-spacing: -0.5px;
+                            }
+                            
+                        }
+                        &.p-call {
+                            font-size: 12px;
+                            line-height: 14px;
+                        }
+                    }
+                }
+            }
+            
+            
+            /* 사업자 */
+            .adr-area {
+                padding: 15px 0 0 0;
+                .adr-box {
+                    address {
+                        font-size: 11px;
+                        letter-spacing: -1.2px;
+                    }
+                }
+            }
+            
+            /* copy */
+            .copy {
+                font-size: 11px;
+            }
+        }
+    }
+}
+
+/* tablet */
+@media (min-width: 768px) and (max-width: 1179px) {
+    .tit-box, .show-xs, .inline-xs {
+        display: none;
+    }
+    .hidden-xs {
+        display: block;
+    }
+    .inline-md {
+        display: inline-block;
+    }
+    
+    .container {
+        @include centerThis($wd : 100%, $pd : 0 30px);
+    }
+    
+    /* header */
+    .header {
+        z-index: 9999;
+        @include centerThis($post: absolute, $wd : 100%, $ht : 107px);
+        border-bottom: 1px solid $bc-gray-1;
+        
+        .header-area {
+            @include centerThis($wd : 100%);
+            text-align: center;
+            
+            //logo
+            .logo-box {
+                position: absolute;
+                display: inline-block;
+                top : 20px;
+                left: 33px;
+                .logo-img {
+                    display: block;
+                }
+            }
+            
+            //menu
+            .nav {
+                @include bx;
+                display: inline-block;
+                .nav-list {
+                    li {
+                        float: left;
+                        padding: 0 10px;
+                        a {
+                            @include bx;
+                            display: block;
+                            font-size: 18px;
+                            font-weight: 300;
+                            line-height: 107px;
+                            color: $fc-white-1;
+                        }
+                        &.on a:before, & a:hover:before {
+                            content: '';
+                            @include menuOn;
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+        &.on {
+            position: fixed;
+            height: 106px;
+            top: 0;
+            left: 0;
+            border-bottom: 0;
+            background: rgba( 0, 0, 0, 0.75);
+            box-shadow: 0 1px 8px 2px rgba(0,0,0,.2);
+            .nav {
+                .nav-list {
+                    li {
+                        &.on a:before, & a:hover:before {
+                            @include menuOn($b : 1px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    /* contents */
+    .contents {
+        
+        section {
+            .tit {
+                img {
+                    margin: 0 auto;
+                }
+            }
+            .h3-tit {
+                font-size: 30px;
+                font-weight: bold;
+                line-height: 30px;
+                color: $fc-black-1;
+            }
+            .sub-tit {
+                margin: 20px auto 25px;
+                font-size: 18px;
+                line-height: 28px;
+                letter-spacing: -0px;
+                word-break: keep-all;
+                color: $fc-gray-3;
+            }
+        }
+        
+        //메인
+        .main-sec {
+            @include bx;
+            padding-top: 108px;
+            height: 700px;
+            background: url(http://img.ocean2you.co.kr/renew/landing-brand/bg_visual.jpg) no-repeat center center;
+            background-size: cover;
+            
+            @include bsSider;
+            .bxBox.main {
+                margin-top: 45px;
+                
+                //bx slider
+                .bxS {
+                    li {
+                        @include bx;
+                        width: 100%;
+                        height: 493px;
+                        background: url(http://img.ocean2you.co.kr/renew/event/event_geomdo.jpg) no-repeat center center; 
+                        background-size: cover;
+                        
+                        .fc-li-box {
+                            @include bx;
+                            display: table;
+                            width: 100%;
+                            height: 100%;
+                            padding: 0 125px;
+                            background: rgba(0, 0, 0, 0.65);
+                            
+                            .fc-txt-box {
+                                display: table-cell;
+                                width: 100%;
+                                text-align: center;
+                                vertical-align: middle;
+                                
+                                p {
+                                    letter-spacing: -1px;
+                                    word-break: keep-all;
+                                    color: $fc-white-1;
+                                    
+                                    &.fc-li-tit {
+                                        margin-bottom: 20px;
+                                        font-size: 30px;
+                                        line-height: 42px;
+                                    }
+                                    &.fc-li-txt {
+                                        font-size: 20px;
+                                        line-height: 42px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        //대회안내
+        .info-sec {
+            padding: 50px 0 0;
+            text-align: center;
+
+            .table-box {
+                @include table-base;
+                .tb-tit {
+                    height: 54px;
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: 54px;
+                    color: $fc-white-1;
+                    background: $bg-blue-2;
+                }
+                .tb-row {
+                    li {
+                        float: left; 
+                        &:nth-child(n+3) {
+                            width: 50%;
+                        }
+                        p {
+                            border-bottom : 1px solid;
+                            &.p-lbl {
+                                border-color: $bc-gray-4;
+                            }
+                            &.p-txt {
+                                border-color: $bc-gray-5;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        //위치안내
+        .loca-sec {
+            padding: 35px 0 60px;
+            text-align: left;
+
+            .loca-tit {
+                padding-left: 28px;
+                font-size: 22px;
+                font-weight: 600;
+                line-height: 26px;
+                color: $fc-black-1;
+                background: url(http://img.ocean2you.co.kr/renew/landing-brand/ico_loca.png) no-repeat 0 center;
+                background-size: auto 26px;
+            }
+
+            .loca-box {
+                @include bx;
+                /*height: 252px;*/
+                margin-top: 20px;
+
+                .loca-map {
+                    @include bx;
+                    float: left;
+                    overflow: hidden;
+                    width: 48%;
+                    height: 174px;
+                    border: 1px solid $bc-gray-6;
+                    img {
+                        min-width: 430px;
+                        min-height: 174px;
+                    }
+                }
+
+                .table-box {
+                    float: right;
+                    width: 51%;
+                    @include table-base($b-c : $bc-gray-5, $f-s : 13px, $pd : 10px 0 10px, $wd : 80px, $p-l-bg : $bg-gray-4, $p-t-pl : 11px);
+                    .tb-row {
+                        li {
+                            //min-height: 70px;
+                            border-top: 1px solid $bc-gray-5;
+                            &:first-child {
+                                border-top: 0;
+                            }
+                            p {
+                                line-height: 22px;
+                                &.p-lbl {
+                                    border-right: 1px solid $bc-gray-5;
+                                }
+                                &.p-txt {
+                                    .s-txt {
+                                        display: inline-block;
+                                        width: 30px;
+                                        height: 18px;
+                                        margin-right: 3px;
+                                        font-size: 12px;
+                                        text-align: center;
+                                        line-height: 18px;
+                                        color: $fc-gray-1;
+                                        border: 1px solid $bc-gray-5;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        //숙소안내&객실안내
+        .visit-sec {
+            text-align: center;
+            
+            //숙소안내
+            .visit-area {
+                padding-top: 65px;
+                background: url(http://img.ocean2you.co.kr/renew/landing-brand/bg_visit.jpg) repeat top center;
+                .sub-tit {
+                    color: $fc-white-1;
+                    > span {
+                        color: $fc-blue-2;
+                    }
+                }
+
+                .visit-box {
+                    @include bx;
+                    .visit-tb-box {
+                        @include bx;
+                        width: 100%;
+                        max-width: 900px;
+                        min-height: 345px;
+                        margin: 0 auto;
+                        background: url(http://img.ocean2you.co.kr/renew/landing-brand/bg_visit_box.jpg) no-repeat center center;
+                        background-size: cover;
+                        .table-box {
+                            @include bx;
+                            @include table-base($f-s : 13px, $b-c : $bc-blue-1, $pd : 10px 0 12px, $wd : 110px, $s-l-c : $fc-white-1, $p-l-bg : $bg-blue-2, $p-t-pl : 10px);
+                            position: absolute;
+                            width: 100%;
+                            padding: 0 35px;
+                            bottom: 30px;
+                            .tb-row {
+                                li {
+                                    float: left;
+                                    width: 50%;
+                                    p {
+                                        @include bx;
+                                        border-top: 1px solid $bc-blue-1;
+                                        &.p-lbl {
+                                            border-color: $bc-white-1;
+                                        }
+
+                                        &.p-all {
+                                            > em {
+                                                color: $fc-red-1;
+                                            }
+                                        }
+
+                                        //btn
+                                        .btn-link {
+                                            position: absolute;
+                                            display: inline-block;
+                                            height: 28px;
+                                            top: 50%; 
+                                            margin: -14px 0 0 6px;
+                                            padding: 0 6px;
+                                            font-size: 11px;
+                                            line-height: 28px;
+                                            border-radius: 3px;
+                                            background: $bg-gray-5;
+                                            .ic-rArrow { 
+                                                @include arrow-r($p-l : 2px, $wh : 5px, $bd-c : $bc-gray-7, $t : -1px);
+                                            }
+                                        }
+                                    }
+                                    &.nth-1, &.nth-2 {
+                                        p {
+                                            &.p-lbl {
+                                                border-top: 0;
+                                            }
+                                            &.p-txt {
+                                                border-top: 0;
+                                            }
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            //객실안내
+            .room-area {
+                @include bx;
+                padding: 30px 0 70px;
+                text-align: center;
+
+                .sub-tit {
+                    margin: 10px auto 25px;
+                }
+
+                .ul-list {
+                    .li-item {
+                        float: left;
+                        /*position: relative;*/
+                        width: 32.3%; 
+                        margin-left: 1.5%;
+                        &:first-child {
+                            margin-left: 0;
+                        }
+                        figure {
+                            img {
+                                width: 100%;
+                            }
+                        }
+
+                        div[class*='d-row'] {
+                            position: relative;
+                            text-align: left;
+
+                            &.d-row-1 {
+                                margin-top: 10px; 
+                                height: 37px;
+                                .s-name {
+                                    position: relative;
+                                    top: 3px;
+                                    font-size: 17px; 
+                                    font-weight: bold;
+                                    line-height: 1.1;  
+                                    letter-spacing: -0.2px;
+                                    color: $fc-gray-3;  
+                                }
+                                .a-btn {
+                                    z-index: 1;
+                                    position: absolute;
+                                    display: inline-block;
+                                    top: 0;
+                                    right: 0; 
+                                    padding: 5%;
+                                    font-size: 12px;
+                                    line-height: 1.3;
+                                    letter-spacing: -0.5px;
+                                    text-align: center;
+                                    color: $fc-white-1;
+                                    background: $bg-green-1;
+                                }
+                            }
+
+                            &.d-row-2 {
+                                font-size: 14px;
+                                line-height: 1.4;
+                                letter-spacing: -0.2px;
+                                color: $fc-gray-1;
+                            }
+                        }
+
+                        @include bsSider($a-wd : 43px);
+
+                        .bxBox {
+                            z-index: 2;
+                            position: absolute;
+                            visibility: hidden;
+                            overflow: hidden;
+                            width: 100%;
+                            top: 43px;
+                            left: 0;
+                            border: 4px solid $bc-green-1;
+                            .bx-wrapper {
+                                img {
+                                    margin: -1px 0 0 0;
+                                }
+                            }
+
+                            //객실안내 텍스트
+                            .txt-box { 
+                                position: absolute;
+                                width: 100%;
+                                top: 120px;
+                                left: 0;
+                                text-align: center;
+                                p {
+                                    letter-spacing: -0.2px;
+                                    color: $fc-white-1;
+                                    &.p1 {
+                                        font-size: 20px;
+                                        font-weight: 500;
+                                    }
+
+                                    &.p2 {
+                                        margin-top: 13px;
+                                        font-size: 16px;
+                                        line-height: 1.6;
+                                    }
+
+                                }
+
+                            }
+
+                            //객실안내 X버튼
+                            .a-x {
+                                @include x-btn;
+                            }
+                        }
+                    }
+                }
+
+                .p-box {
+                    margin-top: 20px;
+                    padding-top: 10px;
+                    border-top: 1px solid $bc-gray-8;
+                    .p-ps {
+                        @include p-ps($f-s : 14px);
+                    }
+                }
+
+                .btn-box {
+                    margin-top: 20px;
+                    padding: 0 50px;
+                    text-align: center;
+                    a {
+                        display: inline-block;
+                        float: left;
+                        width: 48%;
+                        & + a {
+                            float: right;
+                        }
+                    }
+                }
+            }
+        }
+        
+        //숙소예약 문의
+        .view-sec {
+            padding: 50px 0 70px;
+            text-align: center;
+            background: $bg-gray-6;
+            
+            .sub-tit {
+                em {
+                    color: $fc-red-2;
+                }
+            }
+            
+            .form-area {
+                @include bx;
+                width: 685px;
+                margin: 0 auto;
+                color: $fc-gray-3;
+                
+                .f-top {
+                    padding: 10px 0;
+                    font-size: 14px;
+                    text-align: right;
+                    .i-chk {
+                        padding-left: 22px;
+                        @include chk;
+                    }
+                }
+                
+                .ul-tb {
+                    border: 1px solid $bc-gray-5;
+                    border-left: 0;
+                    border-right: 0;
+                    
+                    li {
+                        @include bx;
+                        display: table;
+                        width: 100%;
+                        padding: 9px 16px 9px 20px;
+                        text-align: left;
+                        border-top: 1px solid $bc-gray-5;
+                        
+                        &:first-child {
+                            border-top: 0;
+                        }
+                        
+                        @mixin form-com {
+                            @include bx;
+                            display: inline-block;
+                            height: 30px;
+                            font-size: 16px;
+                            line-height: 30px;
+                        }
+                        .lbl {
+                            @include form-com;
+                            width: 74px;
+                            padding-left: 10px;
+                            &.i-chk { 
+                                @include chk($l : -5px, $r-l : 1px);
+                            }
+                        }
+                        .in-txt {
+                            @include form-com;
+                            width: 200px;
+                            padding: 0 6px;
+                            vertical-align: middle;
+                            border: 1px solid $bc-black-1;
+                            background: $bg-white-1;
+                            & + .lbl {
+                                margin-left: 35px;
+                            }
+                            &.sel-box {
+                                margin-left: 12px;
+                                background: $bg-white-1 url(http://img.ocean2you.co.kr/renew/group/i_dArr.png) no-repeat;
+                                background-size: 17px auto;
+                                background-position: 173px 9px;
+                            }
+                            &.txt-area {
+                                resize: none;
+                                width: 565px;
+                                height: 50px;
+                            }
+                        }
+                        
+                        .phone-box {
+                            @include form-com;
+                            .in-txt {
+                                width: 70px;
+                            }
+                            .mg- {
+                                display: inline-block;
+                                width: 10px; 
+                                height: 1px;
+                                margin: 0 3px;
+                                line-height: 30px;
+                                background: $bg-black-1;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .btn-box {
+                @include bx;
+                width: 685px;
+                margin: 25px auto 0;
+                padding: 0 22px;
+                
+                [class*="btn-"] {
+                    @include bx;
+                    display: block;
+                    float: left;
+                    width: 48%;
+                    height: 74px;
+                    vertical-align: middle;
+                }
+                
+                .btn-com {
+                    float: right;
+                    font-size: 20px;
+                    line-height: 74px;
+                    text-align: center;
+                    color: $fc-white-1;
+                    border-radius: 8px;
+                    background: $bg-black-2;
+                }
+            }
+        }
+    }
+    
+    
+    /* footer */
+    .footer {
+        $f-wd : 115px; //로고 width 값과, 문의 및 copy margin-left 값
+        
+        @include centerThis($wd : 100%, $pd : 19px 20px 40px);
+        border-top: 1px solid $bc-gray-2;
+        text-align: center;
+        
+        .footer-area {
+            @include bx;
+            display: inline-block;
+            
+            @mixin footer-left {
+                margin-left: $f-wd;
+            }
+            
+            /* 문의 영역 */
+            .call-area {
+                position: absolute;
+                top: 115px;
+                @include footer-left;
+                
+                .call-box {
+                    @include bx;
+                    float: left;
+                    width: 155px;
+                    height: 135px;
+                    margin-left: 7px;
+                    padding: 10px 0 5px;
+                    border: 1px solid $bc-gray-3;
+                    background: $bg-gray-2;
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                    
+                    p {
+                        text-align: center;
+                        &.p-1 {
+                            font-size: 16px;
+                            font-weight: bold;
+                            line-height: 24px;
+                            color: $fc-gray-1;
+                        }
+                        &.p-2 {
+                            font-size: 13px;
+                            font-weight: 300;
+                            line-height: 24px;
+                            letter-spacing: -1.3px;
+                            color: $fc-gray-2;
+                            span {
+                                line-height: 18px;
+                                letter-spacing: -0.5px;
+                                &.bul {
+                                    position: relative;
+                                    display: block;
+                                    padding-left: 6px;
+                                    &:before {
+                                        content: '';
+                                        display: inline-block;
+                                        position: absolute;
+                                        width: 2px;
+                                        height: 2px;
+                                        top: 50%;
+                                        margin: -1px 0 0 -6px;
+                                        background: $bg-gray-1;
+                                    }
+                                }
+                            }
+                            
+                        }
+                        &.p-call {
+                            padding: 2px 0;
+                            font-size: 18px;
+                            font-weight: bold;
+                            line-height: 24px;
+                            color: $fc-gray-1;
+                        }
+                    }
+                }
+            }
+            
+            /* 사업자 */
+            .adr-area {
+                @include bx;
+                padding: 10px 0 0 0;
+                text-align: left;
+                
+                .adr-box {
+                    @include bx;
+                    display: table;
+                    
+                    & + .adr-box {
+                        padding-top: 175px;
+                    }
+                    
+                    @mixin table-cell {
+                        position: relative;
+                        display: table-cell;
+                        vertical-align: middle;
+                    }
+                    
+                    .f-logo {
+                        @include table-cell;
+                        width: $f-wd;
+                        img {
+                            width: 85%;
+                        }
+                        .f-logo-txt {
+                            display: block;
+                            margin-top: 4px;
+                            font-size: 11px;
+                            letter-spacing: -1.2px;
+                            color: #aaa;
+                        }
+                    }
+                    address {
+                        @include table-cell;
+                        font-size: 13px;
+                        font-weight: 300;
+                        line-height: 18px;
+                        color: $fc-gray-2;
+                        
+                        em {
+                            display: block;
+                            padding-bottom: 2px;
+                            font-size: 15px;
+                            font-weight: 500;
+                            color: $fc-gray-1;
+                        }
+                        .i-l {
+                            display: block;
+                            position: relative;
+                            width: 14px;
+                            height: 100%;
+                        }
+                        .x-i-l {
+                            position: relative;
+                            display: block;
+                        }
+                    }
+                }
+            }
+            
+            /* copy */
+            .copy {
+                @include footer-left;
+                padding-top: 26px;
+                font-size: 13px;
+                font-weight: 300;
+                line-height: 20px;
+                text-align: left;
+                color: $fc-gray-2;
+            }
+        }
+    }
+    
+}
+
+/* pc */
+@media (min-width: 1180px) {
+    .tit-box, .show-xs, .inline-xs {
+        display: none;
+    }
+    .hidden-xs {
+        display: block;
+    }
+    .inline-md {
+        display: inline-block;
+    }
+    .container {
+        @include centerThis;
+    }
+    
+    /* header */
+    .header {
+        z-index: 9999;
+        @include centerThis($post: absolute, $wd : 100%, $ht : 107px);
+        border-bottom: 1px solid $bc-gray-1;
+        
+        .header-area {
+            @include centerThis($wd : 100%);
+            text-align: center;
+            
+            //logo
+            .logo-box {
+                position: absolute;
+                display: inline-block;
+                top : 20px;
+                left: 100px;
+                a {
+                    display: block;
+                }
+            }
+            
+            //menu
+            .nav {
+                display: inline-block;
+                .nav-list {
+                    li {
+                        float: left;
+                        padding: 0 25px;
+                        a {
+                            @include bx;
+                            display: block;
+                            font-size: 20px;
+                            font-weight: 300;
+                            line-height: 107px;
+                            color: $fc-white-1;
+                        }
+                        &.on a:before, & a:hover:before {
+                            content: '';
+                            @include menuOn;
+                        }
+                    }
+                }
+            }
+        }
+        
+        &.on {
+            position: fixed;
+            height: 106px;
+            top: 0;
+            left: 0;
+            border-bottom: 0;
+            background: rgba( 0, 0, 0, 0.75);
+            box-shadow: 0 1px 8px 2px rgba(0,0,0,.2);
+            .nav {
+                .nav-list {
+                    li {
+                        &.on a:before, & a:hover:before {
+                            @include menuOn($b : 1px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    /* contents */
+    .contents {
+        
+        section {
+            .tit {
+                img {
+                    margin: 0 auto;
+                }
+            }
+            .h3-tit {
+                font-size: 30px;
+                font-weight: bold;
+                line-height: 30px;
+                color: $fc-black-1;
+            }
+            .sub-tit {
+                margin: 25px auto 40px;
+                font-size: 20px;
+                line-height: 30px;
+                color: $fc-gray-3;
+            }
+        }
+        
+        //메인
+        .main-sec {
+            @include bx;
+            padding-top: 108px;
+            height: 700px;
+            background: url(http://img.ocean2you.co.kr/renew/landing-brand/bg_visual.jpg) no-repeat center center;
+            background-size: cover;
+            
+            @include bsSider;
+            .bxBox.main {
+                margin-top: 45px;
+                
+                //bx slider
+                .bxS {
+                    li {
+                        @include bx;
+                        width: 100%;
+                        height: 493px;
+                        background: url(http://img.ocean2you.co.kr/renew/event/event_geomdo.jpg) no-repeat; 
+                        background-size: cover;
+                        
+                        .fc-li-box {
+                            @include bx;
+                            display: table;
+                            width: 100%;
+                            height: 100%;
+                            padding: 0 125px;
+                            background: rgba(0, 0, 0, 0.65);
+                            
+                            .fc-txt-box {
+                                display: table-cell;
+                                width: 100%;
+                                text-align: center;
+                                vertical-align: middle;
+                                
+                                p {
+                                    letter-spacing: -1px;
+                                    word-break: keep-all;
+                                    color: $fc-white-1;
+                                    
+                                    &.fc-li-tit {
+                                        margin-bottom: 20px;
+                                        font-size: 30px;
+                                        line-height: 42px;
+                                    }
+                                    &.fc-li-txt {
+                                        font-size: 20px;
+                                        line-height: 42px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        //대회안내
+        .info-sec {
+            padding: 70px 0 25px;
+            text-align: center;
+
+            .table-box {
+                @include table-base;
+                .tb-tit {
+                    height: 58px;
+                    font-size: 20px;
+                    font-weight: 500;
+                    line-height: 58px;
+                    color: $fc-white-1;
+                    background: $bg-blue-2;
+                }
+                .tb-row {
+                    li {
+                        float: left; 
+                        width: 33.3%;
+                        p {
+                            border-bottom : 1px solid;
+                            &.p-lbl {
+                                border-color: $bc-gray-4;
+                            }
+                            &.p-txt {
+                                border-color: $bc-gray-5;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //위치안내
+        .loca-sec {
+            padding: 25px 0 100px;
+            text-align: left;
+
+            .loca-tit {
+                padding-left: 31px;
+                font-size: 25px;
+                font-weight: 600;
+                line-height: 28px;
+                color: $fc-black-1;
+                background: url(http://img.ocean2you.co.kr/renew/landing-brand/ico_loca.png) no-repeat 0 center;
+            }
+
+            .loca-box {
+                @include bx;
+                /*height: 252px;*/
+                margin-top: 20px;
+
+                .loca-map {
+                    @include bx;
+                    float: left;
+                    width: 580px;
+                    border: 1px solid $bc-gray-6;
+                    img {
+                        position: relative;
+                    }
+                }
+
+                .table-box {
+                    float: right;
+                    width: 580px;
+                    @include table-base($b-c : $bc-gray-5, $wd : 148px, $p-l-bg : $bg-gray-4, $p-t-pl : 18px);
+                    .tb-row {
+                        li {
+                            min-height: 70px;
+                            border-top: 1px solid $bc-gray-5;
+                            &:first-child {
+                                border-top: 0;
+                            }
+                            p {
+                                line-height: 26px;
+                                &.p-lbl {
+                                    border-right: 1px solid $bc-gray-5;
+                                }
+                                &.p-txt {
+                                    .s-txt {
+                                        display: inline-block;
+                                        width: 40px;
+                                        height: 22px;
+                                        margin-right: 6px;
+                                        font-size: 14px;
+                                        text-align: center;
+                                        line-height: 22px;
+                                        color: $fc-gray-1;
+                                        border: 1px solid $bc-gray-5;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        //숙소안내&객실안내
+        .visit-sec {
+            text-align: center;
+            
+            //숙소안내
+            .visit-area {
+                padding-top: 65px;
+                background: url(http://img.ocean2you.co.kr/renew/landing-brand/bg_visit.jpg) repeat top center;
+                .sub-tit {
+                    color: $fc-white-1;
+                    > span {
+                        color: $fc-blue-2;
+                    }
+                }
+
+                .visit-box {
+                    @include bx;
+                    .visit-tb-box {
+                        @include bx;
+                        height: 500px;
+                        background: url(http://img.ocean2you.co.kr/renew/landing-brand/bg_visit_box.jpg) no-repeat center center;
+                        .table-box {
+                            @include bx;
+                            @include table-base($b-c : $bc-blue-1, $pd : 12px 0 14px, $wd : 160px, $s-l-c : $fc-white-1, $p-l-bg : $bg-blue-2, $p-t-pl : 21px);
+                            position: absolute;
+                            width: 100%;
+                            padding: 0 90px;
+                            bottom: 50px;
+                            .tb-row {
+                                li {
+                                    float: left;
+                                    width: 50%;
+                                    p {
+                                        @include bx;
+                                        border-top: 1px solid $bc-blue-1;
+                                        &.p-lbl {
+                                            border-color: $bc-white-1;
+                                        }
+
+                                        &.p-all {
+                                            > em {
+                                                color: $fc-red-1;
+                                            }
+                                        }
+
+                                        //btn
+                                        .btn-link {
+                                            position: absolute;
+                                            display: inline-block;
+                                            height: 30px;
+                                            top: 50%; 
+                                            margin: -15px 0 0 28px;
+                                            padding: 0 11px;
+                                            font-size: 14px;
+                                            line-height: 30px;
+                                            border-radius: 3px;
+                                            background: $bg-gray-5;
+                                            .ic-rArrow {
+                                                @include arrow-r($bd-c : $bc-gray-7, $t : -2px);
+                                            }
+                                        }
+                                    }
+                                    &.nth-1, &.nth-2 {
+                                        p {
+                                            &.p-lbl {
+                                                border-top: 0;
+                                            }
+                                            &.p-txt {
+                                                border-top: 0;
+                                            }
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            //객실안내
+            .room-area {
+                @include bx;
+                padding: 50px 0 100px;
+                text-align: center;
+
+                .sub-tit {
+                    margin: 12px auto 50px;
+                }
+
+                .ul-list {
+                    .li-item {
+                        float: left;
+                        /*position: relative;*/
+                        width: 29.5%; 
+                        margin-left: 5.45%;
+                        &:first-child {
+                            margin-left: 0;
+                        }
+                        figure {
+                            img {
+                                width: 100%;
+                            }
+                        }
+
+                        div[class*='d-row'] {
+                            position: relative;
+                            text-align: left;
+
+                            &.d-row-1 {
+                                margin-top: 20px; 
+                                height: 39px;
+                                .s-name {
+                                    position: relative;
+                                    top: 3px;
+                                    font-size: 20px; 
+                                    font-weight: bold;
+                                    line-height: 1.1;  
+                                    letter-spacing: -0.2px;
+                                    color: $fc-gray-3;  
+                                }
+                                .a-btn {
+                                    z-index: 1;
+                                    position: absolute;
+                                    display: inline-block;
+                                    top: 0;
+                                    right: 0; 
+                                    padding: 12px;
+                                    font-size: 14px;
+                                    line-height: 1.3;
+                                    letter-spacing: -0.5px;
+                                    text-align: center;
+                                    color: $fc-white-1;
+                                    background: $bg-green-1;
+                                }
+                            }
+
+                            &.d-row-2 {
+                                font-size: 17px;
+                                line-height: 1.4;
+                                letter-spacing: -0.2px;
+                                color: $fc-gray-1;
+                            }
+                        }
+
+                        @include bsSider($a-wd : 43px);
+                        //bsSider($a-wd : 50px, $a-lr : 30px, $p-bt : 40px, $p-wd : 12px, $p-pd : 0 10px, $p-bw : 2px)
+
+                        .bxBox {
+                            z-index: 2;
+                            position: absolute;
+                            visibility: hidden;
+                            overflow: hidden;
+                            width: 100%;
+                            bottom: 100px;
+                            left: 0;
+                            border: 5px solid $bc-green-1;
+                            .bx-wrapper {
+                                img {
+                                    margin: -1px 0 0 0;
+                                }
+                            }
+
+                            //객실안내 텍스트
+                            .txt-box { 
+                                position: absolute;
+                                width: 100%;
+                                top: 160px;
+                                left: 0;
+                                text-align: center;
+                                p {
+                                    letter-spacing: -0.2px;
+                                    color: $fc-white-1;
+                                    &.p1 {
+                                        font-size: 30px;
+                                        font-weight: 500;
+                                    }
+
+                                    &.p2 {
+                                        margin-top: 16px;
+                                        font-size: 20px;
+                                        line-height: 1.6;
+                                    }
+
+                                }
+
+                            }
+
+                            //객실안내 X버튼
+                            .a-x {
+                                @include x-btn;
+                            }
+                        }
+                    }
+                }
+
+                .p-box {
+                    margin-top: 29px;
+                    padding-top: 20px;
+                    border-top: 1px solid $bc-gray-8;
+                    .p-ps {
+                        @include p-ps;
+                    }
+                }
+
+                .btn-box {
+                    display: inline-block;
+                    margin-top: 50px;
+                    text-align: center;
+                    a {
+                        display: inline-block;
+                        float: left;
+                        & + a {
+                            margin-left: 30px;
+                        }
+                    }
+                }
+            }
+        }
+        
+        //숙소예약 문의
+        .view-sec {
+            padding: 68px 0 100px;
+            text-align: center;
+            background: $bg-gray-6;
+            
+            .sub-tit {
+                em {
+                    color: $fc-red-2;
+                }
+            }
+            
+            .form-area {
+                @include bx;
+                width: 685px;
+                margin: 0 auto;
+                color: $fc-gray-3;
+                
+                .f-top {
+                    padding: 10px 0;
+                    font-size: 14px;
+                    text-align: right;
+                    .i-chk {
+                        padding-left: 22px;
+                        @include chk;
+                    }
+                }
+                
+                .ul-tb {
+                    border: 1px solid $bc-gray-5;
+                    border-left: 0;
+                    border-right: 0;
+                    
+                    li {
+                        @include bx;
+                        display: table;
+                        width: 100%;
+                        padding: 9px 16px 9px 20px;
+                        text-align: left;
+                        border-top: 1px solid $bc-gray-5;
+                        
+                        &:first-child {
+                            border-top: 0;
+                        }
+                        
+                        @mixin form-com {
+                            @include bx;
+                            display: inline-block;
+                            height: 30px;
+                            font-size: 16px;
+                            line-height: 30px;
+                        }
+                        .lbl {
+                            @include form-com;
+                            width: 74px;
+                            padding-left: 10px;
+                            &.i-chk { 
+                                @include chk($l : -5px, $r-l : 1px);
+                            }
+                        }
+                        .in-txt {
+                            @include form-com;
+                            width: 200px;
+                            padding: 0 6px;
+                            vertical-align: middle;
+                            border: 1px solid $bc-black-1;
+                            background: $bg-white-1;
+                            & + .lbl {
+                                margin-left: 35px;
+                            }
+                            &.sel-box {
+                                margin-left: 12px;
+                                background: $bg-white-1 url(http://img.ocean2you.co.kr/renew/group/i_dArr.png) no-repeat;
+                                background-size: 17px auto;
+                                background-position: 173px 9px;
+                            }
+                            &.txt-area {
+                                resize: none;
+                                width: 565px;
+                                height: 50px;
+                            }
+                        }
+                        
+                        .phone-box {
+                            @include form-com;
+                            .in-txt {
+                                width: 70px;
+                            }
+                            .mg- {
+                                display: inline-block;
+                                width: 10px; 
+                                height: 1px;
+                                margin: 0 3px;
+                                line-height: 30px;
+                                background: $bg-black-1;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .btn-box {
+                @include bx;
+                width: 685px;
+                margin: 25px auto 0;
+                padding: 0 22px;
+                
+                [class*="btn-"] {
+                    @include bx;
+                    display: block;
+                    float: left;
+                    width: 48%;
+                    height: 74px;
+                    vertical-align: middle;
+                }
+                
+                .btn-com {
+                    float: right;
+                    font-size: 20px;
+                    line-height: 74px;
+                    text-align: center;
+                    color: $fc-white-1;
+                    border-radius: 8px;
+                    background: $bg-black-2;
+                }
+            }
+        }
+        
+        
+        
+    }
+    
+    
+    
+    /* footer */
+    .footer {
+        @include centerThis($wd : 100%, $pd : 39px 0 70px);
+        border-top: 1px solid $bc-gray-2;
+        
+        .footer-area {
+            @include centerThis;
+            
+            /* 문의 영역 */
+            .call-area {
+                @include bx;
+                float: right;
+                
+                .call-box {
+                    @include bx;
+                    float: left;
+                    width: 170px;
+                    height: 160px;
+                    margin-left: 9px;
+                    text-align: center;
+                    padding: 20px 0 15px;
+                    border: 1px solid $bc-gray-3;
+                    background: $bg-gray-2;
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                    
+                    p {
+                        text-align: center;
+                        &.p-1 {
+                            font-size: 18px;
+                            font-weight: bold;
+                            line-height: 25px;
+                            color: $fc-gray-1;
+                        }
+                        &.p-2 {
+                            display: inline-block;
+                            font-size: 14px;
+                            font-weight: 300;
+                            line-height: 25px;
+                            letter-spacing: -1px;
+                            color: $fc-gray-2;
+                            span {
+                                line-height: 20px;
+                                letter-spacing: -0.5px;
+                                &.bul {
+                                    position: relative;
+                                    display: block;
+                                    padding-left: 7px;
+                                    &:before {
+                                        content: '';
+                                        display: inline-block;
+                                        position: absolute;
+                                        width: 2px;
+                                        height: 2px;
+                                        top: 50%;
+                                        margin: -1px 0 0 -7px;
+                                        background: $bg-gray-1;
+                                    }
+                                }
+                            }
+                            
+                        }
+                        &.p-call {
+                            padding: 4px 0;
+                            font-size: 22px;
+                            font-weight: bold;
+                            line-height: 25px;
+                            color: $fc-gray-1;
+                        }
+                    }
+                }
+            }
+            
+            /* 사업자 */
+            .adr-area {
+                @include bx;
+                float: left;
+                
+                .adr-box {
+                    @include bx;
+                    display: table;
+                    
+                    @mixin table-cell {
+                        position: relative;
+                        display: table-cell;
+                        vertical-align: middle;
+                    }
+                    
+                    .f-logo {
+                        @include table-cell;
+                        width: 150px;
+                        img {
+
+                        }
+                        .f-logo-txt {
+                            display: block;
+                            margin-top: 9px;
+                            font-size: 13px;
+                            letter-spacing: -1.5px;
+                            color: #aaa;
+                        }
+                    }
+                    address {
+                        @include table-cell;
+                        font-size: 13px;
+                        font-weight: 300;
+                        line-height: 18px;
+                        color: $fc-gray-2;
+                        
+                        em {
+                            display: block;
+                            font-size: 15px;
+                            font-weight: 500;
+                            color: $fc-gray-1;
+                        }
+                        .i-l {
+                            display: inline-block;
+                            position: relative;
+                            width: 19px;
+                            height: 100%;
+                            &:before{
+                                content: '';
+                                @include menuOn($wd : 1px, $ht : 14px, $t : 50%, $b : auto, $l : 50%, $mg : -12px 0 0 0, $bg : $bg-gray-1)
+                            }
+                        }
+                        .x-i-l {
+                            position: relative;
+                            display: block;
+                        }
+                    }
+                }
+            }
+            
+            /* copy */
+            .copy {
+                clear: both;
+                padding-top: 36px;
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 25px;
+                text-align: center;
+                color: $fc-gray-2;
+            }
+        }
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

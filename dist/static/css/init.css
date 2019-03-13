@@ -1,0 +1,2889 @@
+@charset "UTF-8";
+/* border color */
+/* bg color */
+/* font color */
+/* border color */
+/* bg color */
+/* font color */
+/*
+* Noto Sans KR (korean) http://www.google.com/fonts/earlyaccess
+ */
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 100;
+  src: url(font/NotoSansKR-Thin.otf) format("opentype"); }
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 300;
+  src: url(font/NotoSansKR-Light.otf) format("opentype"); }
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  src: url(font/NotoSansKR-Regular.otf) format("opentype"); }
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  src: url(font/NotoSansKR-Medium.otf) format("opentype"); }
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  src: url(font/NotoSansKR-Bold.otf) format("opentype"); }
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 900;
+  src: url(font/NotoSansKR-Black.otf) format("opentype"); }
+
+/*@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 100;
+  src: url(font/NotoSansKR-Thin.woff2) format('woff2'),
+       url(font/NotoSansKR-Thin.woff) format('woff'),
+       url(font/NotoSansKR-Thin.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 300;
+  src: url(font/NotoSansKR-Light.woff2) format('woff2'),
+       url(font/NotoSansKR-Light.woff) format('woff'),
+       url(font/NotoSansKR-Light.otf) format('opentype');
+}
+@font-face {
+   font-family: 'Noto Sans KR';
+   font-style: normal;
+   font-weight: 400;
+   src: url(font/NotoSansKR-Regular.woff2) format('woff2'),
+        url(font/NotoSansKR-Regular.woff) format('woff'),
+        url(font/NotoSansKR-Regular.otf) format('opentype');
+ }
+@font-face {
+   font-family: 'Noto Sans KR';
+   font-style: normal;
+   font-weight: 500;
+   src: url(font/NotoSansKR-Medium.woff2) format('woff2'),
+        url(font/NotoSansKR-Medium.woff) format('woff'),
+        url(font/NotoSansKR-Medium.otf) format('opentype');
+ }
+@font-face {
+   font-family: 'Noto Sans KR';
+   font-style: normal;
+   font-weight: 700;
+   src: url(font/NotoSansKR-Bold.woff2) format('woff2'),
+        url(font/NotoSansKR-Bold.woff) format('woff'),
+        url(font/NotoSansKR-Bold.otf) format('opentype');
+ }
+@font-face {
+   font-family: 'Noto Sans KR';
+   font-style: normal;
+   font-weight: 900;
+   src: url(font/NotoSansKR-Black.woff2) format('woff2'),
+        url(font/NotoSansKR-Black.woff) format('woff'),
+        url(font/NotoSansKR-Black.otf) format('opentype');
+ }*/
+body {
+  font-family: "Noto Sans KR", Sans-serif;
+  letter-spacing: -0.5px;
+  color: #555; }
+
+a {
+  color: inherit; }
+
+input, select, textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  font-family: "Noto Sans KR", Sans-serif; }
+
+select::-ms-expand {
+  display: none; }
+
+/* mobile */
+@media (max-width: 767px) {
+  .show-xs {
+    display: block; }
+  .inline-xs {
+    display: inline-block; }
+  .hidden-xs, .inline-md {
+    display: none; }
+  .container {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0 16px; }
+  /* header */
+  .header {
+    z-index: 9999;
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+    border-bottom: 1px solid #5b5e62; }
+    .header .header-area {
+      position: relative;
+      box-sizing: border-box;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+      padding: 0;
+      text-align: center; }
+      .header .header-area .logo-box {
+        position: relative;
+        box-sizing: border-box;
+        display: block;
+        text-align: center;
+        margin-top: 2%; }
+        .header .header-area .logo-box .logo-img {
+          display: inline-block;
+          width: 20.7%;
+          min-width: 74px; }
+      .header .header-area .tit-box {
+        position: relative;
+        box-sizing: border-box;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        padding: 0 16px;
+        border-bottom: 1px solid #5b5e62; }
+        .header .header-area .tit-box .tit {
+          font-size: 14px;
+          line-height: 46px;
+          text-align: left;
+          color: #5a8be4; }
+      .header .header-area .nav {
+        position: relative;
+        box-sizing: border-box;
+        width: auto;
+        height: auto;
+        margin: 0 auto;
+        padding: 0 16px;
+        display: inline-block;
+        text-align: center; }
+        .header .header-area .nav .nav-list li {
+          float: left;
+          padding: 0 9px 0 10px; }
+          .header .header-area .nav .nav-list li a {
+            position: relative;
+            box-sizing: border-box;
+            display: block;
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 45px;
+            color: #fff; }
+          .header .header-area .nav .nav-list li.on a {
+            font-weight: 500; }
+            .header .header-area .nav .nav-list li.on a:before {
+              content: '';
+              display: block;
+              position: absolute;
+              width: 100%;
+              height: 4px;
+              top: auto;
+              right: auto;
+              bottom: -1px;
+              left: 0;
+              margin: 0;
+              background: #5a8be4; }
+    .header.on {
+      position: fixed;
+      top: 0;
+      left: 0;
+      border-bottom: 0;
+      background: rgba(0, 0, 0, 0.75);
+      box-shadow: 0 1px 8px 2px rgba(0, 0, 0, 0.2); }
+      .header.on .header-area .logo-box {
+        display: none; }
+  /* contents */
+  .contents section .tit img {
+    width: 100%;
+    min-width: 295px;
+    max-width: 360px;
+    margin: 0 auto; }
+  .contents section .h3-tit {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #333; }
+  .contents section .sub-tit {
+    margin: 10px auto 15px;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 0;
+    word-break: keep-all;
+    color: #555; }
+  .contents .main-sec {
+    position: relative;
+    box-sizing: border-box;
+    padding: 142px 0 22px;
+    background: url(http://img.ocean2you.co.kr/renew/landing-brand/bg_visual.jpg) no-repeat center center;
+    background-size: cover; }
+    .contents .main-sec .bxBox {
+      position: relative;
+      box-sizing: border-box; }
+      .contents .main-sec .bxBox .bx-wrapper {
+        position: relative;
+        margin: 0 auto;
+        margin-bottom: 0;
+        border: none;
+        width: 100%;
+        box-shadow: none; }
+        .contents .main-sec .bxBox .bx-wrapper .bx-viewport {
+          border: none;
+          box-shadow: none;
+          left: 0;
+          background: none; }
+        .contents .main-sec .bxBox .bx-wrapper .bx-controls .bx-controls-direction {
+          position: absolute;
+          width: 100%;
+          top: 50%; }
+          .contents .main-sec .bxBox .bx-wrapper .bx-controls .bx-controls-direction a {
+            display: block;
+            position: absolute;
+            width: 51px;
+            height: 50px;
+            margin-top: -25px; }
+            .contents .main-sec .bxBox .bx-wrapper .bx-controls .bx-controls-direction a.bx-prev {
+              left: 30px;
+              background: url(http://img.ocean2you.co.kr/btn_prev2.png) no-repeat center;
+              background-size: auto 50px; }
+            .contents .main-sec .bxBox .bx-wrapper .bx-controls .bx-controls-direction a.bx-next {
+              right: 30px;
+              background: url(http://img.ocean2you.co.kr/btn_next2.png) no-repeat center;
+              background-size: auto 50px; }
+        .contents .main-sec .bxBox .bx-wrapper .bx-controls .bx-controls-auto {
+          display: none; }
+        .contents .main-sec .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+          z-index: 99;
+          position: absolute;
+          display: block;
+          width: 100%;
+          bottom: 17px;
+          text-align: center; }
+          .contents .main-sec .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager .bx-pager-item {
+            width: 10px;
+            padding: 0 7px;
+            text-align: center;
+            vertical-align: middle; }
+            .contents .main-sec .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager .bx-pager-item .bx-pager-link {
+              width: 8px;
+              height: 8px;
+              margin: 0 auto;
+              border-radius: 50%;
+              background: #fff; }
+              .contents .main-sec .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager .bx-pager-item .bx-pager-link.active, .contents .main-sec .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager .bx-pager-item .bx-pager-link:hover {
+                border: 2px solid #fff;
+                background: none; }
+      .contents .main-sec .bxBox.main .bx-wrapper .bx-controls .bx-controls-direction a.bx-prev {
+        background: url(http://img.ocean2you.co.kr/renew/landing-brand/btn_prev.png) no-repeat center;
+        background-size: auto 50px; }
+      .contents .main-sec .bxBox.main .bx-wrapper .bx-controls .bx-controls-direction a.bx-next {
+        background: url(http://img.ocean2you.co.kr/renew/landing-brand/btn_next.png) no-repeat center;
+        background-size: auto 50px; }
+    .contents .main-sec .bxBox.main {
+      margin: 16px -16px 0; }
+      .contents .main-sec .bxBox.main .bxS li {
+        position: relative;
+        box-sizing: border-box;
+        width: 100%;
+        height: 230px;
+        background: url(http://img.ocean2you.co.kr/renew/event/event_geomdo.jpg) no-repeat center center;
+        background-size: cover; }
+        .contents .main-sec .bxBox.main .bxS li .fc-li-box {
+          position: relative;
+          box-sizing: border-box;
+          display: table;
+          width: 100%;
+          height: 100%;
+          padding: 0 20px;
+          background: rgba(0, 0, 0, 0.65); }
+          .contents .main-sec .bxBox.main .bxS li .fc-li-box .fc-txt-box {
+            display: table-cell;
+            width: 100%;
+            text-align: center;
+            vertical-align: middle; }
+            .contents .main-sec .bxBox.main .bxS li .fc-li-box .fc-txt-box p {
+              letter-spacing: -1px;
+              word-break: keep-all;
+              color: #fff; }
+              .contents .main-sec .bxBox.main .bxS li .fc-li-box .fc-txt-box p.fc-li-tit {
+                margin-bottom: 10px;
+                font-size: 16px;
+                line-height: 22px; }
+              .contents .main-sec .bxBox.main .bxS li .fc-li-box .fc-txt-box p.fc-li-txt {
+                font-size: 13px;
+                line-height: 22px;
+                word-break: keep-all; }
+      .contents .main-sec .bxBox.main .bx-wrapper .bx-controls .bx-controls-direction a {
+        display: none; }
+  .contents .info-sec {
+    padding: 32px 0 0;
+    text-align: center; }
+    .contents .info-sec .table-box .tb-row {
+      position: relative;
+      box-sizing: border-box;
+      width: 100%;
+      border: 1px solid none;
+      background: #fff; }
+      .contents .info-sec .table-box .tb-row li {
+        display: table;
+        border-collapse: collapse;
+        width: 100%;
+        word-break: keep-all; }
+        .contents .info-sec .table-box .tb-row li p {
+          display: table-cell;
+          padding: 8px 0 6px;
+          font-size: 13px; }
+          .contents .info-sec .table-box .tb-row li p.p-lbl {
+            width: 65px;
+            text-align: center;
+            vertical-align: middle;
+            color: #666;
+            background: #eee; }
+          .contents .info-sec .table-box .tb-row li p.p-txt {
+            padding-left: 10px;
+            text-align: left;
+            color: #666; }
+        .contents .info-sec .table-box .tb-row li.all {
+          width: 100%; }
+    .contents .info-sec .table-box .tb-tit {
+      height: 34px;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 34px;
+      color: #fff;
+      background: #3669c6; }
+    .contents .info-sec .table-box .tb-row li {
+      float: left; }
+      .contents .info-sec .table-box .tb-row li:nth-child(n+3) {
+        width: 50%; }
+      .contents .info-sec .table-box .tb-row li p {
+        border-bottom: 1px solid; }
+        .contents .info-sec .table-box .tb-row li p.p-lbl {
+          border-color: #bebebe; }
+        .contents .info-sec .table-box .tb-row li p.p-txt {
+          border-color: #ccc; }
+  .contents .loca-sec {
+    padding: 30px 0 40px;
+    text-align: left; }
+    .contents .loca-sec .loca-tit {
+      padding-left: 20px;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 18px;
+      color: #333;
+      background: url(http://img.ocean2you.co.kr/renew/landing-brand/ico_loca.png) no-repeat 0 center;
+      background-size: auto 18px; }
+    .contents .loca-sec .loca-box {
+      position: relative;
+      box-sizing: border-box;
+      margin-top: 9px; }
+      .contents .loca-sec .loca-box .loca-map {
+        position: relative;
+        box-sizing: border-box;
+        width: 100%;
+        overflow: hidden;
+        border: 1px solid #bfbfbf; }
+        .contents .loca-sec .loca-box .loca-map img {
+          position: relative;
+          box-sizing: border-box;
+          width: 100%; }
+      .contents .loca-sec .loca-box .table-box {
+        margin-top: 17px; }
+        .contents .loca-sec .loca-box .table-box .tb-row {
+          position: relative;
+          box-sizing: border-box;
+          width: 100%;
+          border: 1px solid #ccc;
+          background: #fff; }
+          .contents .loca-sec .loca-box .table-box .tb-row li {
+            display: table;
+            border-collapse: collapse;
+            width: 100%;
+            word-break: keep-all; }
+            .contents .loca-sec .loca-box .table-box .tb-row li p {
+              display: table-cell;
+              padding: 10px 0 10px;
+              font-size: 12px; }
+              .contents .loca-sec .loca-box .table-box .tb-row li p.p-lbl {
+                width: 80px;
+                text-align: center;
+                vertical-align: middle;
+                color: #555;
+                background: #f5f5f5; }
+              .contents .loca-sec .loca-box .table-box .tb-row li p.p-txt {
+                padding-left: 11px;
+                text-align: left;
+                color: #666; }
+            .contents .loca-sec .loca-box .table-box .tb-row li.all {
+              width: 100%; }
+        .contents .loca-sec .loca-box .table-box .tb-row li {
+          border-top: 1px solid #ccc; }
+          .contents .loca-sec .loca-box .table-box .tb-row li:first-child {
+            border-top: 0; }
+          .contents .loca-sec .loca-box .table-box .tb-row li p {
+            line-height: 16px; }
+            .contents .loca-sec .loca-box .table-box .tb-row li p.p-lbl {
+              border-right: 1px solid #ccc; }
+            .contents .loca-sec .loca-box .table-box .tb-row li p.p-txt .s-txt {
+              display: inline-block;
+              width: 24px;
+              height: 12px;
+              margin-right: 2px;
+              font-size: 10px;
+              text-align: center;
+              line-height: 12px;
+              color: #666;
+              border: 1px solid #ccc; }
+  .contents .visit-sec {
+    text-align: center; }
+    .contents .visit-sec .visit-area {
+      padding: 30px 0 23px;
+      background: url(http://img.ocean2you.co.kr/renew/landing-brand/bg_visit.jpg) repeat top center; }
+      .contents .visit-sec .visit-area .sub-tit {
+        margin-bottom: 20px;
+        color: #fff; }
+        .contents .visit-sec .visit-area .sub-tit > span {
+          color: #33ffff; }
+      .contents .visit-sec .visit-area .visit-box {
+        margin: 0 -16px; }
+        .contents .visit-sec .visit-area .visit-box .visit-tb-box {
+          position: relative;
+          box-sizing: border-box;
+          width: 100%;
+          margin: 0 auto;
+          padding: 80% 0 5%;
+          background: url(http://img.ocean2you.co.kr/renew/m/landing-brand/bg_visit_box.jpg) no-repeat center center;
+          background-size: cover; }
+          .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box {
+            position: relative;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 0 22px; }
+            .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row {
+              position: relative;
+              box-sizing: border-box;
+              width: 100%;
+              border: 1px solid #5789e3;
+              background: #fff; }
+              .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li {
+                display: table;
+                border-collapse: collapse;
+                width: 100%;
+                word-break: keep-all; }
+                .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p {
+                  display: table-cell;
+                  padding: 8px 0 7px;
+                  font-size: 12px; }
+                  .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p.p-lbl {
+                    width: 32%;
+                    text-align: center;
+                    vertical-align: middle;
+                    color: #fff;
+                    background: #3669c6; }
+                  .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p.p-txt {
+                    padding-left: 10px;
+                    text-align: left;
+                    color: #666; }
+                .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li.all {
+                  width: 100%; }
+            .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li {
+              float: left; }
+              .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p {
+                position: relative;
+                box-sizing: border-box;
+                border-top: 1px solid #5789e3; }
+                .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p.p-lbl {
+                  border-color: #fff; }
+                .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p.p-all {
+                  padding: 8px 10px 7px 23px;
+                  text-indent: -14px;
+                  text-align: left; }
+                  .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p.p-all > em {
+                    color: #f21850; }
+                .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p .btn-link {
+                  position: absolute;
+                  display: inline-block;
+                  height: 20px;
+                  top: 50%;
+                  right: 5px;
+                  margin: -10px 0 0;
+                  padding: 0 6px;
+                  font-size: 10px;
+                  line-height: 20px;
+                  border-radius: 3px;
+                  background: #e4e4e4; }
+                  .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p .btn-link .ic-rArrow {
+                    position: relative;
+                    padding-left: 2px; }
+                    .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p .btn-link .ic-rArrow:after {
+                      content: '';
+                      position: relative;
+                      display: inline-block;
+                      width: 3px;
+                      height: 3px;
+                      top: -2px;
+                      right: auto;
+                      bottom: auto;
+                      left: auto;
+                      border: 1px solid #666;
+                      border-top: 0;
+                      border-left: 0;
+                      -webkit-transform: rotate(-45deg);
+                      -ms-transform: rotate(-45deg);
+                      -o-transform: rotate(-45deg);
+                      transform: rotate(-45deg); }
+              .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li.nth-1 p.p-lbl {
+                border-top: 0; }
+              .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li.nth-1 p.p-txt {
+                border-top: 0; }
+    .contents .visit-sec .room-area {
+      position: relative;
+      box-sizing: border-box;
+      padding: 22px 0 42px;
+      text-align: center; }
+      .contents .visit-sec .room-area .sub-tit {
+        margin: 7px auto 14px; }
+      .contents .visit-sec .room-area .ul-list .li-item {
+        position: relative;
+        box-sizing: border-box;
+        width: 100%;
+        margin-top: 20px; }
+        .contents .visit-sec .room-area .ul-list .li-item:first-child {
+          margin-top: 0; }
+        .contents .visit-sec .room-area .ul-list .li-item figure img {
+          width: 100%; }
+        .contents .visit-sec .room-area .ul-list .li-item div[class*='d-row'] {
+          position: relative;
+          text-align: left; }
+          .contents .visit-sec .room-area .ul-list .li-item div[class*='d-row'].d-row-1 {
+            margin-top: 5px; }
+            .contents .visit-sec .room-area .ul-list .li-item div[class*='d-row'].d-row-1 .s-name {
+              position: relative;
+              top: 3px;
+              font-size: 16px;
+              font-weight: bold;
+              line-height: 1.1;
+              letter-spacing: -0.5px;
+              color: #555; }
+            .contents .visit-sec .room-area .ul-list .li-item div[class*='d-row'].d-row-1 .a-btn {
+              z-index: 1;
+              position: absolute;
+              box-sizing: border-box;
+              display: inline-block;
+              min-width: 48px;
+              min-height: 43px;
+              top: 0;
+              right: 0;
+              padding: 2.5%;
+              font-size: 11px;
+              line-height: 1.3;
+              letter-spacing: -0.5px;
+              text-align: center;
+              color: #fff;
+              background: #01374f; }
+          .contents .visit-sec .room-area .ul-list .li-item div[class*='d-row'].d-row-2 {
+            position: relative;
+            box-sizing: border-box;
+            margin-top: 8px;
+            padding-left: 30px;
+            font-size: 13px;
+            line-height: 1.4;
+            letter-spacing: -0.5px;
+            color: #666; }
+            .contents .visit-sec .room-area .ul-list .li-item div[class*='d-row'].d-row-2:before {
+              content: '';
+              position: absolute;
+              display: block;
+              width: 25px;
+              height: 1px;
+              top: 8px;
+              left: 0;
+              background: #666; }
+        .contents .visit-sec .room-area .ul-list .li-item .bxBox {
+          position: relative;
+          box-sizing: border-box; }
+          .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper {
+            position: relative;
+            margin: 0 auto;
+            margin-bottom: 0;
+            border: none;
+            width: 100%;
+            box-shadow: none; }
+            .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-viewport {
+              border: none;
+              box-shadow: none;
+              left: 0;
+              background: none; }
+            .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls .bx-controls-direction {
+              position: absolute;
+              width: 100%;
+              top: 50%; }
+              .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls .bx-controls-direction a {
+                display: block;
+                position: absolute;
+                width: 27px;
+                height: 26px;
+                margin-top: -13px; }
+                .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls .bx-controls-direction a.bx-prev {
+                  left: 10px;
+                  background: url(http://img.ocean2you.co.kr/btn_prev2.png) no-repeat center;
+                  background-size: auto 26px; }
+                .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls .bx-controls-direction a.bx-next {
+                  right: 10px;
+                  background: url(http://img.ocean2you.co.kr/btn_next2.png) no-repeat center;
+                  background-size: auto 26px; }
+            .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls .bx-controls-auto {
+              display: none; }
+            .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+              z-index: 99;
+              position: absolute;
+              display: block;
+              width: 100%;
+              bottom: 40px;
+              text-align: center; }
+              .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager .bx-pager-item {
+                width: 12px;
+                padding: 0 10px;
+                text-align: center;
+                vertical-align: middle; }
+                .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager .bx-pager-item .bx-pager-link {
+                  width: 10px;
+                  height: 10px;
+                  margin: 0 auto;
+                  border-radius: 50%;
+                  background: #fff; }
+                  .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager .bx-pager-item .bx-pager-link.active, .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager .bx-pager-item .bx-pager-link:hover {
+                    border: 2px solid #fff;
+                    background: none; }
+          .contents .visit-sec .room-area .ul-list .li-item .bxBox.main .bx-wrapper .bx-controls .bx-controls-direction a.bx-prev {
+            background: url(http://img.ocean2you.co.kr/renew/landing-brand/btn_prev.png) no-repeat center;
+            background-size: auto 26px; }
+          .contents .visit-sec .room-area .ul-list .li-item .bxBox.main .bx-wrapper .bx-controls .bx-controls-direction a.bx-next {
+            background: url(http://img.ocean2you.co.kr/renew/landing-brand/btn_next.png) no-repeat center;
+            background-size: auto 26px; }
+        .contents .visit-sec .room-area .ul-list .li-item .bxBox {
+          z-index: 2;
+          position: absolute;
+          visibility: hidden;
+          overflow: hidden;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          border: 4px solid #01374f; }
+          .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper {
+            height: 100%; }
+            .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper img {
+              position: relative; }
+          .contents .visit-sec .room-area .ul-list .li-item .bxBox .txt-box {
+            position: absolute;
+            width: 100%;
+            top: 40%;
+            left: 0;
+            vertical-align: middle;
+            text-align: center; }
+            .contents .visit-sec .room-area .ul-list .li-item .bxBox .txt-box p {
+              letter-spacing: -0.2px;
+              color: #fff; }
+              .contents .visit-sec .room-area .ul-list .li-item .bxBox .txt-box p.p1 {
+                font-size: 15px;
+                font-weight: 500; }
+              .contents .visit-sec .room-area .ul-list .li-item .bxBox .txt-box p.p2 {
+                margin-top: 4px;
+                font-size: 12px;
+                line-height: 1.6; }
+          .contents .visit-sec .room-area .ul-list .li-item .bxBox .a-x {
+            position: absolute;
+            display: block;
+            width: 36px;
+            height: 36px;
+            top: 0;
+            right: 0;
+            background: #01374f; }
+            .contents .visit-sec .room-area .ul-list .li-item .bxBox .a-x:before, .contents .visit-sec .room-area .ul-list .li-item .bxBox .a-x:after {
+              content: '';
+              position: absolute;
+              display: inline-block;
+              width: 30px;
+              height: 1px;
+              top: 15px;
+              left: 5px;
+              background: #fff; }
+      .contents .visit-sec .room-area .p-box {
+        margin-top: 5px;
+        padding-top: 2px;
+        border-top: 1px solid #e0e0e0; }
+        .contents .visit-sec .room-area .p-box .p-ps {
+          position: relative;
+          display: inline-block;
+          padding-left: 20px;
+          font-size: 12px;
+          font-weight: 300;
+          line-height: 26px;
+          color: #888;
+          background: url(http://img.ocean2you.co.kr/renew/group/pic_i.png) no-repeat 0 center;
+          background-size: 17px auto; }
+      .contents .visit-sec .room-area .btn-box {
+        max-width: 500px;
+        margin: 16px auto 0;
+        padding: 0 12px;
+        text-align: center; }
+        .contents .visit-sec .room-area .btn-box a {
+          display: inline-block;
+          float: left;
+          width: 48%; }
+          .contents .visit-sec .room-area .btn-box a img {
+            width: 100%; }
+          .contents .visit-sec .room-area .btn-box a + a {
+            float: right; }
+  .contents .view-sec {
+    padding: 30px 0 40px;
+    text-align: center;
+    background: #e0e0e0; }
+    .contents .view-sec .sub-tit em {
+      color: #f43e3e; }
+    .contents .view-sec .form-area {
+      position: relative;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 470px;
+      margin: 0 auto;
+      color: #555; }
+      .contents .view-sec .form-area .f-top {
+        padding: 5px 0;
+        font-size: 12px;
+        text-align: right; }
+        .contents .view-sec .form-area .f-top .i-chk {
+          padding-left: 20px;
+          position: relative; }
+          .contents .view-sec .form-area .f-top .i-chk:before, .contents .view-sec .form-area .f-top .i-chk:after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            width: 3px;
+            top: 50%;
+            background: #5a8be4; }
+          .contents .view-sec .form-area .f-top .i-chk:before {
+            height: 7px;
+            left: 6px;
+            margin-top: -3px;
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+          .contents .view-sec .form-area .f-top .i-chk:after {
+            height: 10px;
+            left: 11px;
+            margin-top: -6px;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg); }
+      .contents .view-sec .form-area .ul-tb {
+        padding: 5px 0;
+        border: 1px solid #ccc;
+        border-left: 0;
+        border-right: 0; }
+        .contents .view-sec .form-area .ul-tb li {
+          position: relative;
+          box-sizing: border-box;
+          display: table;
+          width: 100%;
+          padding: 5px 5px 5px 10px;
+          text-align: left; }
+          .contents .view-sec .form-area .ul-tb li .lbl {
+            position: relative;
+            box-sizing: border-box;
+            float: left;
+            display: inline-block;
+            height: 28px;
+            font-size: 13px;
+            line-height: 28px;
+            width: 20%;
+            padding-left: 10px; }
+            .contents .view-sec .form-area .ul-tb li .lbl.i-chk {
+              position: relative; }
+              .contents .view-sec .form-area .ul-tb li .lbl.i-chk:before, .contents .view-sec .form-area .ul-tb li .lbl.i-chk:after {
+                content: '';
+                display: inline-block;
+                position: absolute;
+                width: 3px;
+                top: 50%;
+                background: #5a8be4; }
+              .contents .view-sec .form-area .ul-tb li .lbl.i-chk:before {
+                height: 7px;
+                left: -5px;
+                margin-top: -3px;
+                -webkit-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+                transform: rotate(-45deg); }
+              .contents .view-sec .form-area .ul-tb li .lbl.i-chk:after {
+                height: 10px;
+                left: 0px;
+                margin-top: -6px;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                transform: rotate(45deg); }
+          .contents .view-sec .form-area .ul-tb li .in-txt {
+            position: relative;
+            box-sizing: border-box;
+            float: left;
+            display: inline-block;
+            height: 28px;
+            font-size: 13px;
+            line-height: 28px;
+            width: 80%;
+            padding: 0 6px;
+            vertical-align: middle;
+            border: 1px solid #414141;
+            background: #fff; }
+            .contents .view-sec .form-area .ul-tb li .in-txt.sel-box {
+              margin-left: 2%;
+              background: #fff url(http://img.ocean2you.co.kr/renew/group/i_dArr.png) no-repeat;
+              background-size: 14px auto;
+              background-position: 92% 10px; }
+            .contents .view-sec .form-area .ul-tb li .in-txt.txt-area {
+              resize: none;
+              height: 80px; }
+            .contents .view-sec .form-area .ul-tb li .in-txt + .lbl {
+              margin-top: 10px; }
+          .contents .view-sec .form-area .ul-tb li .phone-box {
+            position: relative;
+            box-sizing: border-box;
+            float: left;
+            display: inline-block;
+            height: 28px;
+            font-size: 13px;
+            line-height: 28px;
+            padding-top: 10px;
+            width: 80%;
+            height: auto; }
+            .contents .view-sec .form-area .ul-tb li .phone-box .in-txt {
+              float: left;
+              width: 27.5%; }
+            .contents .view-sec .form-area .ul-tb li .phone-box .mg- {
+              float: left;
+              display: inline-block;
+              width: 4.1%;
+              height: 1px;
+              margin: 13px 2.3% 0;
+              background: #414141; }
+          .contents .view-sec .form-area .ul-tb li.day-box .in-txt {
+            width: 39%; }
+          .contents .view-sec .form-area .ul-tb li.etc .lbl {
+            line-height: 80px; }
+    .contents .view-sec .btn-box {
+      position: relative;
+      box-sizing: border-box;
+      display: inline-block;
+      margin: 10px auto 0; }
+      .contents .view-sec .btn-box [class*="btn-"] {
+        position: relative;
+        box-sizing: border-box;
+        display: block;
+        float: left;
+        width: 50%;
+        height: 40px;
+        font-size: 16px;
+        line-height: 40px;
+        vertical-align: middle; }
+      .contents .view-sec .btn-box .btn-robo .g-recaptcha {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        -webkit-transform: scale(0.55);
+        transform: scale(0.55);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0; }
+      .contents .view-sec .btn-box .btn-com {
+        float: right;
+        width: 48%;
+        text-align: center;
+        color: #fff;
+        border-radius: 5px;
+        background: #333; }
+  /* footer */
+  .footer {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0 16px;
+    text-align: center; }
+    .footer .footer-area {
+      position: relative;
+      box-sizing: border-box;
+      display: inline-block;
+      padding: 23px 0 25px;
+      /* 문의 영역 */
+      /* 사업자 */
+      /* copy */ }
+      .footer .footer-area .call-area .call-box {
+        position: relative;
+        box-sizing: border-box;
+        float: left;
+        width: 33.3%;
+        height: 120px;
+        padding: 6px 5px;
+        border: 1px solid #ddd;
+        border-left: 0;
+        background: #f8f8f8; }
+        .footer .footer-area .call-area .call-box:first-child {
+          border-left: 1px solid #ddd; }
+        .footer .footer-area .call-area .call-box p {
+          text-align: center; }
+          .footer .footer-area .call-area .call-box p.p-1 {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 24px;
+            color: #666; }
+          .footer .footer-area .call-area .call-box p.p-2 {
+            font-size: 12px;
+            font-weight: 300;
+            line-height: 16px;
+            letter-spacing: -1.3px;
+            color: #888; }
+            .footer .footer-area .call-area .call-box p.p-2 span {
+              font-size: 10px;
+              line-height: 12px;
+              letter-spacing: -0.5px; }
+              .footer .footer-area .call-area .call-box p.p-2 span.bul {
+                position: relative;
+                display: block;
+                padding-left: 3px; }
+                .footer .footer-area .call-area .call-box p.p-2 span.bul:before {
+                  content: '';
+                  display: inline-block;
+                  position: absolute;
+                  width: 1px;
+                  height: 1px;
+                  top: 50%;
+                  margin: 0 0 0 -3px;
+                  background: #888; }
+          .footer .footer-area .call-area .call-box p.p-call {
+            padding: 2px 0;
+            font-size: 13px;
+            font-weight: bold;
+            line-height: 16px;
+            color: #666; }
+      .footer .footer-area .adr-area {
+        position: relative;
+        box-sizing: border-box;
+        padding: 20px 0 0 0;
+        text-align: left; }
+        .footer .footer-area .adr-area .adr-box {
+          box-sizing: border-box;
+          display: table; }
+          .footer .footer-area .adr-area .adr-box + .adr-box {
+            padding-top: 10px; }
+          .footer .footer-area .adr-area .adr-box .f-logo {
+            display: table-cell;
+            vertical-align: middle;
+            width: 70px; }
+            .footer .footer-area .adr-area .adr-box .f-logo img {
+              width: 100%; }
+            .footer .footer-area .adr-area .adr-box .f-logo .f-logo-txt {
+              position: absolute;
+              display: block;
+              width: 70px;
+              bottom: -5px;
+              font-size: 12px;
+              text-align: center;
+              letter-spacing: -1.2px;
+              color: #aaa; }
+          .footer .footer-area .adr-area .adr-box address {
+            display: table-cell;
+            vertical-align: middle;
+            padding-left: 10px;
+            font-size: 12px;
+            font-weight: 300;
+            line-height: 16px;
+            letter-spacing: -1px;
+            color: #888; }
+            .footer .footer-area .adr-area .adr-box address em {
+              display: block;
+              padding-bottom: 2px;
+              font-weight: 500;
+              color: #666; }
+            .footer .footer-area .adr-area .adr-box address .i-l {
+              position: relative;
+              display: block; }
+            .footer .footer-area .adr-area .adr-box address .x-i-l {
+              position: relative;
+              display: inline-block;
+              width: 10px;
+              height: 100%; }
+              .footer .footer-area .adr-area .adr-box address .x-i-l:before {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 1px;
+                height: 12px;
+                top: 50%;
+                right: auto;
+                bottom: auto;
+                left: 50%;
+                margin: -10px 0 0 0;
+                background: #888; }
+      .footer .footer-area .copy {
+        padding-top: 15px;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 14px;
+        color: #888; } }
+
+/* mobile iphone5 + 350 */
+@media (max-device-width: 352px) {
+  .container {
+    padding: 0 13px; }
+  /* header */
+  .header .header-area .tit-box {
+    padding: 0 13px; }
+    .header .header-area .tit-box .tit {
+      font-size: 13px; }
+  .header .header-area .nav {
+    padding: 0 13px; }
+    .header .header-area .nav .nav-list li {
+      padding: 0 8px 0 9px; }
+      .header .header-area .nav .nav-list li a {
+        font-size: 12px; }
+  /* contents */
+  .contents .main-sec .bxBox.main {
+    margin: 16px -13px 0; }
+  .contents .info-sec .table-box .tb-tit {
+    font-size: 14px; }
+  .contents .info-sec .table-box .tb-row li p {
+    font-size: 12px; }
+    .contents .info-sec .table-box .tb-row li p.p-lbl {
+      width: 60px; }
+    .contents .info-sec .table-box .tb-row li p.p-txt {
+      padding-left: 5px; }
+  .contents .loca-sec .loca-box .table-box .tb-row li p {
+    letter-spacing: -0.7px; }
+    .contents .loca-sec .loca-box .table-box .tb-row li p.p-lbl {
+      width: 63px; }
+    .contents .loca-sec .loca-box .table-box .tb-row li p.p-txt {
+      padding-left: 7px; }
+  .contents .visit-sec .visit-area .visit-box {
+    margin: 0 -13px; }
+    .contents .visit-sec .visit-area .visit-box .visit-tb-box {
+      min-height: 370px; }
+      .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box {
+        padding: 0 20px; }
+        .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p {
+          font-size: 11px; }
+          .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p.p-all {
+            text-indent: -13px; }
+  .contents .view-sec .btn-box .btn-robo .g-recaptcha {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5); }
+  /* footer */
+  .footer {
+    padding: 0 13px; }
+    .footer .footer-area {
+      position: relative;
+      box-sizing: border-box;
+      display: inline-block;
+      /* 문의 영역 */
+      /* 사업자 */
+      /* copy */ }
+      .footer .footer-area .call-area .call-box {
+        position: relative;
+        box-sizing: border-box;
+        height: 110px;
+        padding: 4px 3px; }
+        .footer .footer-area .call-area .call-box p.p-1 {
+          font-size: 15px;
+          line-height: 22px; }
+        .footer .footer-area .call-area .call-box p.p-2 {
+          font-size: 11px;
+          line-height: 14px;
+          letter-spacing: -1.3px; }
+          .footer .footer-area .call-area .call-box p.p-2 span {
+            font-size: 10px;
+            line-height: 12px;
+            letter-spacing: -0.5px; }
+        .footer .footer-area .call-area .call-box p.p-call {
+          font-size: 12px;
+          line-height: 14px; }
+      .footer .footer-area .adr-area {
+        padding: 15px 0 0 0; }
+        .footer .footer-area .adr-area .adr-box address {
+          font-size: 11px;
+          letter-spacing: -1.2px; }
+      .footer .footer-area .copy {
+        font-size: 11px; } }
+
+/* tablet */
+@media (min-width: 768px) and (max-width: 1179px) {
+  .tit-box, .show-xs, .inline-xs {
+    display: none; }
+  .hidden-xs {
+    display: block; }
+  .inline-md {
+    display: inline-block; }
+  .container {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0 30px; }
+  /* header */
+  .header {
+    z-index: 9999;
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: 107px;
+    margin: 0 auto;
+    padding: 0;
+    border-bottom: 1px solid #5b5e62; }
+    .header .header-area {
+      position: relative;
+      box-sizing: border-box;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+      padding: 0;
+      text-align: center; }
+      .header .header-area .logo-box {
+        position: absolute;
+        display: inline-block;
+        top: 20px;
+        left: 33px; }
+        .header .header-area .logo-box .logo-img {
+          display: block; }
+      .header .header-area .nav {
+        position: relative;
+        box-sizing: border-box;
+        display: inline-block; }
+        .header .header-area .nav .nav-list li {
+          float: left;
+          padding: 0 10px; }
+          .header .header-area .nav .nav-list li a {
+            position: relative;
+            box-sizing: border-box;
+            display: block;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 107px;
+            color: #fff; }
+          .header .header-area .nav .nav-list li.on a:before, .header .header-area .nav .nav-list li a:hover:before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            top: auto;
+            right: auto;
+            bottom: 0;
+            left: 0;
+            margin: 0;
+            background: #5a8be4; }
+    .header.on {
+      position: fixed;
+      height: 106px;
+      top: 0;
+      left: 0;
+      border-bottom: 0;
+      background: rgba(0, 0, 0, 0.75);
+      box-shadow: 0 1px 8px 2px rgba(0, 0, 0, 0.2); }
+      .header.on .nav .nav-list li.on a:before, .header.on .nav .nav-list li a:hover:before {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        top: auto;
+        right: auto;
+        bottom: 1px;
+        left: 0;
+        margin: 0;
+        background: #5a8be4; }
+  /* contents */
+  .contents section .tit img {
+    margin: 0 auto; }
+  .contents section .h3-tit {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 30px;
+    color: #333; }
+  .contents section .sub-tit {
+    margin: 20px auto 25px;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0px;
+    word-break: keep-all;
+    color: #555; }
+  .contents .main-sec {
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 108px;
+    height: 700px;
+    background: url(http://img.ocean2you.co.kr/renew/landing-brand/bg_visual.jpg) no-repeat center center;
+    background-size: cover; }
+    .contents .main-sec .bxBox {
+      position: relative;
+      box-sizing: border-box; }
+      .contents .main-sec .bxBox .bx-wrapper {
+        position: relative;
+        margin: 0 auto;
+        margin-bottom: 0;
+        border: none;
+        width: 100%;
+        box-shadow: none; }
+        .contents .main-sec .bxBox .bx-wrapper .bx-viewport {
+          border: none;
+          box-shadow: none;
+          left: 0;
+          background: none; }
+        .contents .main-sec .bxBox .bx-wrapper .bx-controls .bx-controls-direction {
+          position: absolute;
+          width: 100%;
+          top: 50%; }
+          .contents .main-sec .bxBox .bx-wrapper .bx-controls .bx-controls-direction a {
+            display: block;
+            position: absolute;
+            width: 51px;
+            height: 50px;
+            margin-top: -25px; }
+            .contents .main-sec .bxBox .bx-wrapper .bx-controls .bx-controls-direction a.bx-prev {
+              left: 30px;
+              background: url(http://img.ocean2you.co.kr/btn_prev2.png) no-repeat center;
+              background-size: auto 50px; }
+            .contents .main-sec .bxBox .bx-wrapper .bx-controls .bx-controls-direction a.bx-next {
+              right: 30px;
+              background: url(http://img.ocean2you.co.kr/btn_next2.png) no-repeat center;
+              background-size: auto 50px; }
+        .contents .main-sec .bxBox .bx-wrapper .bx-controls .bx-controls-auto {
+          display: none; }
+        .contents .main-sec .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+          z-index: 99;
+          position: absolute;
+          display: block;
+          width: 100%;
+          bottom: 40px;
+          text-align: center; }
+          .contents .main-sec .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager .bx-pager-item {
+            width: 12px;
+            padding: 0 10px;
+            text-align: center;
+            vertical-align: middle; }
+            .contents .main-sec .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager .bx-pager-item .bx-pager-link {
+              width: 10px;
+              height: 10px;
+              margin: 0 auto;
+              border-radius: 50%;
+              background: #fff; }
+              .contents .main-sec .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager .bx-pager-item .bx-pager-link.active, .contents .main-sec .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager .bx-pager-item .bx-pager-link:hover {
+                border: 2px solid #fff;
+                background: none; }
+      .contents .main-sec .bxBox.main .bx-wrapper .bx-controls .bx-controls-direction a.bx-prev {
+        background: url(http://img.ocean2you.co.kr/renew/landing-brand/btn_prev.png) no-repeat center;
+        background-size: auto 50px; }
+      .contents .main-sec .bxBox.main .bx-wrapper .bx-controls .bx-controls-direction a.bx-next {
+        background: url(http://img.ocean2you.co.kr/renew/landing-brand/btn_next.png) no-repeat center;
+        background-size: auto 50px; }
+    .contents .main-sec .bxBox.main {
+      margin-top: 45px; }
+      .contents .main-sec .bxBox.main .bxS li {
+        position: relative;
+        box-sizing: border-box;
+        width: 100%;
+        height: 493px;
+        background: url(http://img.ocean2you.co.kr/renew/event/event_geomdo.jpg) no-repeat center center;
+        background-size: cover; }
+        .contents .main-sec .bxBox.main .bxS li .fc-li-box {
+          position: relative;
+          box-sizing: border-box;
+          display: table;
+          width: 100%;
+          height: 100%;
+          padding: 0 125px;
+          background: rgba(0, 0, 0, 0.65); }
+          .contents .main-sec .bxBox.main .bxS li .fc-li-box .fc-txt-box {
+            display: table-cell;
+            width: 100%;
+            text-align: center;
+            vertical-align: middle; }
+            .contents .main-sec .bxBox.main .bxS li .fc-li-box .fc-txt-box p {
+              letter-spacing: -1px;
+              word-break: keep-all;
+              color: #fff; }
+              .contents .main-sec .bxBox.main .bxS li .fc-li-box .fc-txt-box p.fc-li-tit {
+                margin-bottom: 20px;
+                font-size: 30px;
+                line-height: 42px; }
+              .contents .main-sec .bxBox.main .bxS li .fc-li-box .fc-txt-box p.fc-li-txt {
+                font-size: 20px;
+                line-height: 42px; }
+  .contents .info-sec {
+    padding: 50px 0 0;
+    text-align: center; }
+    .contents .info-sec .table-box .tb-row {
+      position: relative;
+      box-sizing: border-box;
+      width: 100%;
+      border: 1px solid none;
+      background: #fff; }
+      .contents .info-sec .table-box .tb-row li {
+        display: table;
+        border-collapse: collapse;
+        width: 100%;
+        word-break: keep-all; }
+        .contents .info-sec .table-box .tb-row li p {
+          display: table-cell;
+          padding: 20px 0 17px;
+          font-size: 16px; }
+          .contents .info-sec .table-box .tb-row li p.p-lbl {
+            width: 140px;
+            text-align: center;
+            vertical-align: middle;
+            color: #555;
+            background: #eee; }
+          .contents .info-sec .table-box .tb-row li p.p-txt {
+            padding-left: 17px;
+            text-align: left;
+            color: #666; }
+        .contents .info-sec .table-box .tb-row li.all {
+          width: 100%; }
+    .contents .info-sec .table-box .tb-tit {
+      height: 54px;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 54px;
+      color: #fff;
+      background: #3669c6; }
+    .contents .info-sec .table-box .tb-row li {
+      float: left; }
+      .contents .info-sec .table-box .tb-row li:nth-child(n+3) {
+        width: 50%; }
+      .contents .info-sec .table-box .tb-row li p {
+        border-bottom: 1px solid; }
+        .contents .info-sec .table-box .tb-row li p.p-lbl {
+          border-color: #bebebe; }
+        .contents .info-sec .table-box .tb-row li p.p-txt {
+          border-color: #ccc; }
+  .contents .loca-sec {
+    padding: 35px 0 60px;
+    text-align: left; }
+    .contents .loca-sec .loca-tit {
+      padding-left: 28px;
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 26px;
+      color: #333;
+      background: url(http://img.ocean2you.co.kr/renew/landing-brand/ico_loca.png) no-repeat 0 center;
+      background-size: auto 26px; }
+    .contents .loca-sec .loca-box {
+      position: relative;
+      box-sizing: border-box;
+      /*height: 252px;*/
+      margin-top: 20px; }
+      .contents .loca-sec .loca-box .loca-map {
+        position: relative;
+        box-sizing: border-box;
+        float: left;
+        overflow: hidden;
+        width: 48%;
+        height: 174px;
+        border: 1px solid #bfbfbf; }
+        .contents .loca-sec .loca-box .loca-map img {
+          min-width: 430px;
+          min-height: 174px; }
+      .contents .loca-sec .loca-box .table-box {
+        float: right;
+        width: 51%; }
+        .contents .loca-sec .loca-box .table-box .tb-row {
+          position: relative;
+          box-sizing: border-box;
+          width: 100%;
+          border: 1px solid #ccc;
+          background: #fff; }
+          .contents .loca-sec .loca-box .table-box .tb-row li {
+            display: table;
+            border-collapse: collapse;
+            width: 100%;
+            word-break: keep-all; }
+            .contents .loca-sec .loca-box .table-box .tb-row li p {
+              display: table-cell;
+              padding: 10px 0 10px;
+              font-size: 13px; }
+              .contents .loca-sec .loca-box .table-box .tb-row li p.p-lbl {
+                width: 80px;
+                text-align: center;
+                vertical-align: middle;
+                color: #555;
+                background: #f5f5f5; }
+              .contents .loca-sec .loca-box .table-box .tb-row li p.p-txt {
+                padding-left: 11px;
+                text-align: left;
+                color: #666; }
+            .contents .loca-sec .loca-box .table-box .tb-row li.all {
+              width: 100%; }
+        .contents .loca-sec .loca-box .table-box .tb-row li {
+          border-top: 1px solid #ccc; }
+          .contents .loca-sec .loca-box .table-box .tb-row li:first-child {
+            border-top: 0; }
+          .contents .loca-sec .loca-box .table-box .tb-row li p {
+            line-height: 22px; }
+            .contents .loca-sec .loca-box .table-box .tb-row li p.p-lbl {
+              border-right: 1px solid #ccc; }
+            .contents .loca-sec .loca-box .table-box .tb-row li p.p-txt .s-txt {
+              display: inline-block;
+              width: 30px;
+              height: 18px;
+              margin-right: 3px;
+              font-size: 12px;
+              text-align: center;
+              line-height: 18px;
+              color: #666;
+              border: 1px solid #ccc; }
+  .contents .visit-sec {
+    text-align: center; }
+    .contents .visit-sec .visit-area {
+      padding-top: 65px;
+      background: url(http://img.ocean2you.co.kr/renew/landing-brand/bg_visit.jpg) repeat top center; }
+      .contents .visit-sec .visit-area .sub-tit {
+        color: #fff; }
+        .contents .visit-sec .visit-area .sub-tit > span {
+          color: #33ffff; }
+      .contents .visit-sec .visit-area .visit-box {
+        position: relative;
+        box-sizing: border-box; }
+        .contents .visit-sec .visit-area .visit-box .visit-tb-box {
+          position: relative;
+          box-sizing: border-box;
+          width: 100%;
+          max-width: 900px;
+          min-height: 345px;
+          margin: 0 auto;
+          background: url(http://img.ocean2you.co.kr/renew/landing-brand/bg_visit_box.jpg) no-repeat center center;
+          background-size: cover; }
+          .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box {
+            position: relative;
+            box-sizing: border-box;
+            position: absolute;
+            width: 100%;
+            padding: 0 35px;
+            bottom: 30px; }
+            .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row {
+              position: relative;
+              box-sizing: border-box;
+              width: 100%;
+              border: 1px solid #5789e3;
+              background: #fff; }
+              .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li {
+                display: table;
+                border-collapse: collapse;
+                width: 100%;
+                word-break: keep-all; }
+                .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p {
+                  display: table-cell;
+                  padding: 10px 0 12px;
+                  font-size: 13px; }
+                  .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p.p-lbl {
+                    width: 110px;
+                    text-align: center;
+                    vertical-align: middle;
+                    color: #fff;
+                    background: #3669c6; }
+                  .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p.p-txt {
+                    padding-left: 10px;
+                    text-align: left;
+                    color: #666; }
+                .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li.all {
+                  width: 100%; }
+            .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li {
+              float: left;
+              width: 50%; }
+              .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p {
+                position: relative;
+                box-sizing: border-box;
+                border-top: 1px solid #5789e3; }
+                .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p.p-lbl {
+                  border-color: #fff; }
+                .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p.p-all > em {
+                  color: #f21850; }
+                .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p .btn-link {
+                  position: absolute;
+                  display: inline-block;
+                  height: 28px;
+                  top: 50%;
+                  margin: -14px 0 0 6px;
+                  padding: 0 6px;
+                  font-size: 11px;
+                  line-height: 28px;
+                  border-radius: 3px;
+                  background: #e4e4e4; }
+                  .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p .btn-link .ic-rArrow {
+                    position: relative;
+                    padding-left: 2px; }
+                    .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p .btn-link .ic-rArrow:after {
+                      content: '';
+                      position: relative;
+                      display: inline-block;
+                      width: 5px;
+                      height: 5px;
+                      top: -1px;
+                      right: auto;
+                      bottom: auto;
+                      left: auto;
+                      border: 1px solid #666;
+                      border-top: 0;
+                      border-left: 0;
+                      -webkit-transform: rotate(-45deg);
+                      -ms-transform: rotate(-45deg);
+                      -o-transform: rotate(-45deg);
+                      transform: rotate(-45deg); }
+              .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li.nth-1 p.p-lbl, .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li.nth-2 p.p-lbl {
+                border-top: 0; }
+              .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li.nth-1 p.p-txt, .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li.nth-2 p.p-txt {
+                border-top: 0; }
+    .contents .visit-sec .room-area {
+      position: relative;
+      box-sizing: border-box;
+      padding: 30px 0 70px;
+      text-align: center; }
+      .contents .visit-sec .room-area .sub-tit {
+        margin: 10px auto 25px; }
+      .contents .visit-sec .room-area .ul-list .li-item {
+        float: left;
+        /*position: relative;*/
+        width: 32.3%;
+        margin-left: 1.5%; }
+        .contents .visit-sec .room-area .ul-list .li-item:first-child {
+          margin-left: 0; }
+        .contents .visit-sec .room-area .ul-list .li-item figure img {
+          width: 100%; }
+        .contents .visit-sec .room-area .ul-list .li-item div[class*='d-row'] {
+          position: relative;
+          text-align: left; }
+          .contents .visit-sec .room-area .ul-list .li-item div[class*='d-row'].d-row-1 {
+            margin-top: 10px;
+            height: 37px; }
+            .contents .visit-sec .room-area .ul-list .li-item div[class*='d-row'].d-row-1 .s-name {
+              position: relative;
+              top: 3px;
+              font-size: 17px;
+              font-weight: bold;
+              line-height: 1.1;
+              letter-spacing: -0.2px;
+              color: #555; }
+            .contents .visit-sec .room-area .ul-list .li-item div[class*='d-row'].d-row-1 .a-btn {
+              z-index: 1;
+              position: absolute;
+              display: inline-block;
+              top: 0;
+              right: 0;
+              padding: 5%;
+              font-size: 12px;
+              line-height: 1.3;
+              letter-spacing: -0.5px;
+              text-align: center;
+              color: #fff;
+              background: #01374f; }
+          .contents .visit-sec .room-area .ul-list .li-item div[class*='d-row'].d-row-2 {
+            font-size: 14px;
+            line-height: 1.4;
+            letter-spacing: -0.2px;
+            color: #666; }
+        .contents .visit-sec .room-area .ul-list .li-item .bxBox {
+          position: relative;
+          box-sizing: border-box; }
+          .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper {
+            position: relative;
+            margin: 0 auto;
+            margin-bottom: 0;
+            border: none;
+            width: 100%;
+            box-shadow: none; }
+            .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-viewport {
+              border: none;
+              box-shadow: none;
+              left: 0;
+              background: none; }
+            .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls .bx-controls-direction {
+              position: absolute;
+              width: 100%;
+              top: 50%; }
+              .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls .bx-controls-direction a {
+                display: block;
+                position: absolute;
+                width: 44px;
+                height: 43px;
+                margin-top: -21.5px; }
+                .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls .bx-controls-direction a.bx-prev {
+                  left: 30px;
+                  background: url(http://img.ocean2you.co.kr/btn_prev2.png) no-repeat center;
+                  background-size: auto 43px; }
+                .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls .bx-controls-direction a.bx-next {
+                  right: 30px;
+                  background: url(http://img.ocean2you.co.kr/btn_next2.png) no-repeat center;
+                  background-size: auto 43px; }
+            .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls .bx-controls-auto {
+              display: none; }
+            .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+              z-index: 99;
+              position: absolute;
+              display: block;
+              width: 100%;
+              bottom: 40px;
+              text-align: center; }
+              .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager .bx-pager-item {
+                width: 12px;
+                padding: 0 10px;
+                text-align: center;
+                vertical-align: middle; }
+                .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager .bx-pager-item .bx-pager-link {
+                  width: 10px;
+                  height: 10px;
+                  margin: 0 auto;
+                  border-radius: 50%;
+                  background: #fff; }
+                  .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager .bx-pager-item .bx-pager-link.active, .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager .bx-pager-item .bx-pager-link:hover {
+                    border: 2px solid #fff;
+                    background: none; }
+          .contents .visit-sec .room-area .ul-list .li-item .bxBox.main .bx-wrapper .bx-controls .bx-controls-direction a.bx-prev {
+            background: url(http://img.ocean2you.co.kr/renew/landing-brand/btn_prev.png) no-repeat center;
+            background-size: auto 43px; }
+          .contents .visit-sec .room-area .ul-list .li-item .bxBox.main .bx-wrapper .bx-controls .bx-controls-direction a.bx-next {
+            background: url(http://img.ocean2you.co.kr/renew/landing-brand/btn_next.png) no-repeat center;
+            background-size: auto 43px; }
+        .contents .visit-sec .room-area .ul-list .li-item .bxBox {
+          z-index: 2;
+          position: absolute;
+          visibility: hidden;
+          overflow: hidden;
+          width: 100%;
+          top: 43px;
+          left: 0;
+          border: 4px solid #01374f; }
+          .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper img {
+            margin: -1px 0 0 0; }
+          .contents .visit-sec .room-area .ul-list .li-item .bxBox .txt-box {
+            position: absolute;
+            width: 100%;
+            top: 120px;
+            left: 0;
+            text-align: center; }
+            .contents .visit-sec .room-area .ul-list .li-item .bxBox .txt-box p {
+              letter-spacing: -0.2px;
+              color: #fff; }
+              .contents .visit-sec .room-area .ul-list .li-item .bxBox .txt-box p.p1 {
+                font-size: 20px;
+                font-weight: 500; }
+              .contents .visit-sec .room-area .ul-list .li-item .bxBox .txt-box p.p2 {
+                margin-top: 13px;
+                font-size: 16px;
+                line-height: 1.6; }
+          .contents .visit-sec .room-area .ul-list .li-item .bxBox .a-x {
+            position: absolute;
+            display: block;
+            width: 36px;
+            height: 36px;
+            top: 0;
+            right: 0;
+            background: #01374f; }
+            .contents .visit-sec .room-area .ul-list .li-item .bxBox .a-x:before, .contents .visit-sec .room-area .ul-list .li-item .bxBox .a-x:after {
+              content: '';
+              position: absolute;
+              display: inline-block;
+              width: 30px;
+              height: 1px;
+              top: 15px;
+              left: 5px;
+              background: #fff; }
+      .contents .visit-sec .room-area .p-box {
+        margin-top: 20px;
+        padding-top: 10px;
+        border-top: 1px solid #e0e0e0; }
+        .contents .visit-sec .room-area .p-box .p-ps {
+          position: relative;
+          display: inline-block;
+          padding-left: 20px;
+          font-size: 14px;
+          font-weight: 300;
+          line-height: 26px;
+          color: #888;
+          background: url(http://img.ocean2you.co.kr/renew/group/pic_i.png) no-repeat 0 center;
+          background-size: 17px auto; }
+      .contents .visit-sec .room-area .btn-box {
+        margin-top: 20px;
+        padding: 0 50px;
+        text-align: center; }
+        .contents .visit-sec .room-area .btn-box a {
+          display: inline-block;
+          float: left;
+          width: 48%; }
+          .contents .visit-sec .room-area .btn-box a + a {
+            float: right; }
+  .contents .view-sec {
+    padding: 50px 0 70px;
+    text-align: center;
+    background: #e0e0e0; }
+    .contents .view-sec .sub-tit em {
+      color: #f43e3e; }
+    .contents .view-sec .form-area {
+      position: relative;
+      box-sizing: border-box;
+      width: 685px;
+      margin: 0 auto;
+      color: #555; }
+      .contents .view-sec .form-area .f-top {
+        padding: 10px 0;
+        font-size: 14px;
+        text-align: right; }
+        .contents .view-sec .form-area .f-top .i-chk {
+          padding-left: 22px;
+          position: relative; }
+          .contents .view-sec .form-area .f-top .i-chk:before, .contents .view-sec .form-area .f-top .i-chk:after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            width: 3px;
+            top: 50%;
+            background: #5a8be4; }
+          .contents .view-sec .form-area .f-top .i-chk:before {
+            height: 9px;
+            left: 6px;
+            margin-top: -3px;
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+          .contents .view-sec .form-area .f-top .i-chk:after {
+            height: 12px;
+            left: 12px;
+            margin-top: -6px;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg); }
+      .contents .view-sec .form-area .ul-tb {
+        border: 1px solid #ccc;
+        border-left: 0;
+        border-right: 0; }
+        .contents .view-sec .form-area .ul-tb li {
+          position: relative;
+          box-sizing: border-box;
+          display: table;
+          width: 100%;
+          padding: 9px 16px 9px 20px;
+          text-align: left;
+          border-top: 1px solid #ccc; }
+          .contents .view-sec .form-area .ul-tb li:first-child {
+            border-top: 0; }
+          .contents .view-sec .form-area .ul-tb li .lbl {
+            position: relative;
+            box-sizing: border-box;
+            display: inline-block;
+            height: 30px;
+            font-size: 16px;
+            line-height: 30px;
+            width: 74px;
+            padding-left: 10px; }
+            .contents .view-sec .form-area .ul-tb li .lbl.i-chk {
+              position: relative; }
+              .contents .view-sec .form-area .ul-tb li .lbl.i-chk:before, .contents .view-sec .form-area .ul-tb li .lbl.i-chk:after {
+                content: '';
+                display: inline-block;
+                position: absolute;
+                width: 3px;
+                top: 50%;
+                background: #5a8be4; }
+              .contents .view-sec .form-area .ul-tb li .lbl.i-chk:before {
+                height: 9px;
+                left: -5px;
+                margin-top: -3px;
+                -webkit-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+                transform: rotate(-45deg); }
+              .contents .view-sec .form-area .ul-tb li .lbl.i-chk:after {
+                height: 12px;
+                left: 1px;
+                margin-top: -6px;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                transform: rotate(45deg); }
+          .contents .view-sec .form-area .ul-tb li .in-txt {
+            position: relative;
+            box-sizing: border-box;
+            display: inline-block;
+            height: 30px;
+            font-size: 16px;
+            line-height: 30px;
+            width: 200px;
+            padding: 0 6px;
+            vertical-align: middle;
+            border: 1px solid #414141;
+            background: #fff; }
+            .contents .view-sec .form-area .ul-tb li .in-txt + .lbl {
+              margin-left: 35px; }
+            .contents .view-sec .form-area .ul-tb li .in-txt.sel-box {
+              margin-left: 12px;
+              background: #fff url(http://img.ocean2you.co.kr/renew/group/i_dArr.png) no-repeat;
+              background-size: 17px auto;
+              background-position: 173px 9px; }
+            .contents .view-sec .form-area .ul-tb li .in-txt.txt-area {
+              resize: none;
+              width: 565px;
+              height: 50px; }
+          .contents .view-sec .form-area .ul-tb li .phone-box {
+            position: relative;
+            box-sizing: border-box;
+            display: inline-block;
+            height: 30px;
+            font-size: 16px;
+            line-height: 30px; }
+            .contents .view-sec .form-area .ul-tb li .phone-box .in-txt {
+              width: 70px; }
+            .contents .view-sec .form-area .ul-tb li .phone-box .mg- {
+              display: inline-block;
+              width: 10px;
+              height: 1px;
+              margin: 0 3px;
+              line-height: 30px;
+              background: #414141; }
+    .contents .view-sec .btn-box {
+      position: relative;
+      box-sizing: border-box;
+      width: 685px;
+      margin: 25px auto 0;
+      padding: 0 22px; }
+      .contents .view-sec .btn-box [class*="btn-"] {
+        position: relative;
+        box-sizing: border-box;
+        display: block;
+        float: left;
+        width: 48%;
+        height: 74px;
+        vertical-align: middle; }
+      .contents .view-sec .btn-box .btn-com {
+        float: right;
+        font-size: 20px;
+        line-height: 74px;
+        text-align: center;
+        color: #fff;
+        border-radius: 8px;
+        background: #333; }
+  /* footer */
+  .footer {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 19px 20px 40px;
+    border-top: 1px solid #888;
+    text-align: center; }
+    .footer .footer-area {
+      position: relative;
+      box-sizing: border-box;
+      display: inline-block;
+      /* 문의 영역 */
+      /* 사업자 */
+      /* copy */ }
+      .footer .footer-area .call-area {
+        position: absolute;
+        top: 115px;
+        margin-left: 115px; }
+        .footer .footer-area .call-area .call-box {
+          position: relative;
+          box-sizing: border-box;
+          float: left;
+          width: 155px;
+          height: 135px;
+          margin-left: 7px;
+          padding: 10px 0 5px;
+          border: 1px solid #ddd;
+          background: #f8f8f8; }
+          .footer .footer-area .call-area .call-box:first-child {
+            margin-left: 0; }
+          .footer .footer-area .call-area .call-box p {
+            text-align: center; }
+            .footer .footer-area .call-area .call-box p.p-1 {
+              font-size: 16px;
+              font-weight: bold;
+              line-height: 24px;
+              color: #666; }
+            .footer .footer-area .call-area .call-box p.p-2 {
+              font-size: 13px;
+              font-weight: 300;
+              line-height: 24px;
+              letter-spacing: -1.3px;
+              color: #888; }
+              .footer .footer-area .call-area .call-box p.p-2 span {
+                line-height: 18px;
+                letter-spacing: -0.5px; }
+                .footer .footer-area .call-area .call-box p.p-2 span.bul {
+                  position: relative;
+                  display: block;
+                  padding-left: 6px; }
+                  .footer .footer-area .call-area .call-box p.p-2 span.bul:before {
+                    content: '';
+                    display: inline-block;
+                    position: absolute;
+                    width: 2px;
+                    height: 2px;
+                    top: 50%;
+                    margin: -1px 0 0 -6px;
+                    background: #888; }
+            .footer .footer-area .call-area .call-box p.p-call {
+              padding: 2px 0;
+              font-size: 18px;
+              font-weight: bold;
+              line-height: 24px;
+              color: #666; }
+      .footer .footer-area .adr-area {
+        position: relative;
+        box-sizing: border-box;
+        padding: 10px 0 0 0;
+        text-align: left; }
+        .footer .footer-area .adr-area .adr-box {
+          position: relative;
+          box-sizing: border-box;
+          display: table; }
+          .footer .footer-area .adr-area .adr-box + .adr-box {
+            padding-top: 175px; }
+          .footer .footer-area .adr-area .adr-box .f-logo {
+            position: relative;
+            display: table-cell;
+            vertical-align: middle;
+            width: 115px; }
+            .footer .footer-area .adr-area .adr-box .f-logo img {
+              width: 85%; }
+            .footer .footer-area .adr-area .adr-box .f-logo .f-logo-txt {
+              display: block;
+              margin-top: 4px;
+              font-size: 11px;
+              letter-spacing: -1.2px;
+              color: #aaa; }
+          .footer .footer-area .adr-area .adr-box address {
+            position: relative;
+            display: table-cell;
+            vertical-align: middle;
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 18px;
+            color: #888; }
+            .footer .footer-area .adr-area .adr-box address em {
+              display: block;
+              padding-bottom: 2px;
+              font-size: 15px;
+              font-weight: 500;
+              color: #666; }
+            .footer .footer-area .adr-area .adr-box address .i-l {
+              display: block;
+              position: relative;
+              width: 14px;
+              height: 100%; }
+            .footer .footer-area .adr-area .adr-box address .x-i-l {
+              position: relative;
+              display: block; }
+      .footer .footer-area .copy {
+        margin-left: 115px;
+        padding-top: 26px;
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 20px;
+        text-align: left;
+        color: #888; } }
+
+/* pc */
+@media (min-width: 1180px) {
+  .tit-box, .show-xs, .inline-xs {
+    display: none; }
+  .hidden-xs {
+    display: block; }
+  .inline-md {
+    display: inline-block; }
+  .container {
+    position: relative;
+    box-sizing: border-box;
+    width: 1180px;
+    height: auto;
+    margin: 0 auto;
+    padding: 0; }
+  /* header */
+  .header {
+    z-index: 9999;
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: 107px;
+    margin: 0 auto;
+    padding: 0;
+    border-bottom: 1px solid #5b5e62; }
+    .header .header-area {
+      position: relative;
+      box-sizing: border-box;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+      padding: 0;
+      text-align: center; }
+      .header .header-area .logo-box {
+        position: absolute;
+        display: inline-block;
+        top: 20px;
+        left: 100px; }
+        .header .header-area .logo-box a {
+          display: block; }
+      .header .header-area .nav {
+        display: inline-block; }
+        .header .header-area .nav .nav-list li {
+          float: left;
+          padding: 0 25px; }
+          .header .header-area .nav .nav-list li a {
+            position: relative;
+            box-sizing: border-box;
+            display: block;
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 107px;
+            color: #fff; }
+          .header .header-area .nav .nav-list li.on a:before, .header .header-area .nav .nav-list li a:hover:before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            top: auto;
+            right: auto;
+            bottom: 0;
+            left: 0;
+            margin: 0;
+            background: #5a8be4; }
+    .header.on {
+      position: fixed;
+      height: 106px;
+      top: 0;
+      left: 0;
+      border-bottom: 0;
+      background: rgba(0, 0, 0, 0.75);
+      box-shadow: 0 1px 8px 2px rgba(0, 0, 0, 0.2); }
+      .header.on .nav .nav-list li.on a:before, .header.on .nav .nav-list li a:hover:before {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        top: auto;
+        right: auto;
+        bottom: 1px;
+        left: 0;
+        margin: 0;
+        background: #5a8be4; }
+  /* contents */
+  .contents section .tit img {
+    margin: 0 auto; }
+  .contents section .h3-tit {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 30px;
+    color: #333; }
+  .contents section .sub-tit {
+    margin: 25px auto 40px;
+    font-size: 20px;
+    line-height: 30px;
+    color: #555; }
+  .contents .main-sec {
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 108px;
+    height: 700px;
+    background: url(http://img.ocean2you.co.kr/renew/landing-brand/bg_visual.jpg) no-repeat center center;
+    background-size: cover; }
+    .contents .main-sec .bxBox {
+      position: relative;
+      box-sizing: border-box; }
+      .contents .main-sec .bxBox .bx-wrapper {
+        position: relative;
+        margin: 0 auto;
+        margin-bottom: 0;
+        border: none;
+        width: 100%;
+        box-shadow: none; }
+        .contents .main-sec .bxBox .bx-wrapper .bx-viewport {
+          border: none;
+          box-shadow: none;
+          left: 0;
+          background: none; }
+        .contents .main-sec .bxBox .bx-wrapper .bx-controls .bx-controls-direction {
+          position: absolute;
+          width: 100%;
+          top: 50%; }
+          .contents .main-sec .bxBox .bx-wrapper .bx-controls .bx-controls-direction a {
+            display: block;
+            position: absolute;
+            width: 51px;
+            height: 50px;
+            margin-top: -25px; }
+            .contents .main-sec .bxBox .bx-wrapper .bx-controls .bx-controls-direction a.bx-prev {
+              left: 30px;
+              background: url(http://img.ocean2you.co.kr/btn_prev2.png) no-repeat center;
+              background-size: auto 50px; }
+            .contents .main-sec .bxBox .bx-wrapper .bx-controls .bx-controls-direction a.bx-next {
+              right: 30px;
+              background: url(http://img.ocean2you.co.kr/btn_next2.png) no-repeat center;
+              background-size: auto 50px; }
+        .contents .main-sec .bxBox .bx-wrapper .bx-controls .bx-controls-auto {
+          display: none; }
+        .contents .main-sec .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+          z-index: 99;
+          position: absolute;
+          display: block;
+          width: 100%;
+          bottom: 40px;
+          text-align: center; }
+          .contents .main-sec .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager .bx-pager-item {
+            width: 12px;
+            padding: 0 10px;
+            text-align: center;
+            vertical-align: middle; }
+            .contents .main-sec .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager .bx-pager-item .bx-pager-link {
+              width: 10px;
+              height: 10px;
+              margin: 0 auto;
+              border-radius: 50%;
+              background: #fff; }
+              .contents .main-sec .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager .bx-pager-item .bx-pager-link.active, .contents .main-sec .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager .bx-pager-item .bx-pager-link:hover {
+                border: 2px solid #fff;
+                background: none; }
+      .contents .main-sec .bxBox.main .bx-wrapper .bx-controls .bx-controls-direction a.bx-prev {
+        background: url(http://img.ocean2you.co.kr/renew/landing-brand/btn_prev.png) no-repeat center;
+        background-size: auto 50px; }
+      .contents .main-sec .bxBox.main .bx-wrapper .bx-controls .bx-controls-direction a.bx-next {
+        background: url(http://img.ocean2you.co.kr/renew/landing-brand/btn_next.png) no-repeat center;
+        background-size: auto 50px; }
+    .contents .main-sec .bxBox.main {
+      margin-top: 45px; }
+      .contents .main-sec .bxBox.main .bxS li {
+        position: relative;
+        box-sizing: border-box;
+        width: 100%;
+        height: 493px;
+        background: url(http://img.ocean2you.co.kr/renew/event/event_geomdo.jpg) no-repeat;
+        background-size: cover; }
+        .contents .main-sec .bxBox.main .bxS li .fc-li-box {
+          position: relative;
+          box-sizing: border-box;
+          display: table;
+          width: 100%;
+          height: 100%;
+          padding: 0 125px;
+          background: rgba(0, 0, 0, 0.65); }
+          .contents .main-sec .bxBox.main .bxS li .fc-li-box .fc-txt-box {
+            display: table-cell;
+            width: 100%;
+            text-align: center;
+            vertical-align: middle; }
+            .contents .main-sec .bxBox.main .bxS li .fc-li-box .fc-txt-box p {
+              letter-spacing: -1px;
+              word-break: keep-all;
+              color: #fff; }
+              .contents .main-sec .bxBox.main .bxS li .fc-li-box .fc-txt-box p.fc-li-tit {
+                margin-bottom: 20px;
+                font-size: 30px;
+                line-height: 42px; }
+              .contents .main-sec .bxBox.main .bxS li .fc-li-box .fc-txt-box p.fc-li-txt {
+                font-size: 20px;
+                line-height: 42px; }
+  .contents .info-sec {
+    padding: 70px 0 25px;
+    text-align: center; }
+    .contents .info-sec .table-box .tb-row {
+      position: relative;
+      box-sizing: border-box;
+      width: 100%;
+      border: 1px solid none;
+      background: #fff; }
+      .contents .info-sec .table-box .tb-row li {
+        display: table;
+        border-collapse: collapse;
+        width: 100%;
+        word-break: keep-all; }
+        .contents .info-sec .table-box .tb-row li p {
+          display: table-cell;
+          padding: 20px 0 17px;
+          font-size: 16px; }
+          .contents .info-sec .table-box .tb-row li p.p-lbl {
+            width: 140px;
+            text-align: center;
+            vertical-align: middle;
+            color: #555;
+            background: #eee; }
+          .contents .info-sec .table-box .tb-row li p.p-txt {
+            padding-left: 17px;
+            text-align: left;
+            color: #666; }
+        .contents .info-sec .table-box .tb-row li.all {
+          width: 100%; }
+    .contents .info-sec .table-box .tb-tit {
+      height: 58px;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 58px;
+      color: #fff;
+      background: #3669c6; }
+    .contents .info-sec .table-box .tb-row li {
+      float: left;
+      width: 33.3%; }
+      .contents .info-sec .table-box .tb-row li p {
+        border-bottom: 1px solid; }
+        .contents .info-sec .table-box .tb-row li p.p-lbl {
+          border-color: #bebebe; }
+        .contents .info-sec .table-box .tb-row li p.p-txt {
+          border-color: #ccc; }
+  .contents .loca-sec {
+    padding: 25px 0 100px;
+    text-align: left; }
+    .contents .loca-sec .loca-tit {
+      padding-left: 31px;
+      font-size: 25px;
+      font-weight: 600;
+      line-height: 28px;
+      color: #333;
+      background: url(http://img.ocean2you.co.kr/renew/landing-brand/ico_loca.png) no-repeat 0 center; }
+    .contents .loca-sec .loca-box {
+      position: relative;
+      box-sizing: border-box;
+      /*height: 252px;*/
+      margin-top: 20px; }
+      .contents .loca-sec .loca-box .loca-map {
+        position: relative;
+        box-sizing: border-box;
+        float: left;
+        width: 580px;
+        border: 1px solid #bfbfbf; }
+        .contents .loca-sec .loca-box .loca-map img {
+          position: relative; }
+      .contents .loca-sec .loca-box .table-box {
+        float: right;
+        width: 580px; }
+        .contents .loca-sec .loca-box .table-box .tb-row {
+          position: relative;
+          box-sizing: border-box;
+          width: 100%;
+          border: 1px solid #ccc;
+          background: #fff; }
+          .contents .loca-sec .loca-box .table-box .tb-row li {
+            display: table;
+            border-collapse: collapse;
+            width: 100%;
+            word-break: keep-all; }
+            .contents .loca-sec .loca-box .table-box .tb-row li p {
+              display: table-cell;
+              padding: 20px 0 17px;
+              font-size: 16px; }
+              .contents .loca-sec .loca-box .table-box .tb-row li p.p-lbl {
+                width: 148px;
+                text-align: center;
+                vertical-align: middle;
+                color: #555;
+                background: #f5f5f5; }
+              .contents .loca-sec .loca-box .table-box .tb-row li p.p-txt {
+                padding-left: 18px;
+                text-align: left;
+                color: #666; }
+            .contents .loca-sec .loca-box .table-box .tb-row li.all {
+              width: 100%; }
+        .contents .loca-sec .loca-box .table-box .tb-row li {
+          min-height: 70px;
+          border-top: 1px solid #ccc; }
+          .contents .loca-sec .loca-box .table-box .tb-row li:first-child {
+            border-top: 0; }
+          .contents .loca-sec .loca-box .table-box .tb-row li p {
+            line-height: 26px; }
+            .contents .loca-sec .loca-box .table-box .tb-row li p.p-lbl {
+              border-right: 1px solid #ccc; }
+            .contents .loca-sec .loca-box .table-box .tb-row li p.p-txt .s-txt {
+              display: inline-block;
+              width: 40px;
+              height: 22px;
+              margin-right: 6px;
+              font-size: 14px;
+              text-align: center;
+              line-height: 22px;
+              color: #666;
+              border: 1px solid #ccc; }
+  .contents .visit-sec {
+    text-align: center; }
+    .contents .visit-sec .visit-area {
+      padding-top: 65px;
+      background: url(http://img.ocean2you.co.kr/renew/landing-brand/bg_visit.jpg) repeat top center; }
+      .contents .visit-sec .visit-area .sub-tit {
+        color: #fff; }
+        .contents .visit-sec .visit-area .sub-tit > span {
+          color: #33ffff; }
+      .contents .visit-sec .visit-area .visit-box {
+        position: relative;
+        box-sizing: border-box; }
+        .contents .visit-sec .visit-area .visit-box .visit-tb-box {
+          position: relative;
+          box-sizing: border-box;
+          height: 500px;
+          background: url(http://img.ocean2you.co.kr/renew/landing-brand/bg_visit_box.jpg) no-repeat center center; }
+          .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box {
+            position: relative;
+            box-sizing: border-box;
+            position: absolute;
+            width: 100%;
+            padding: 0 90px;
+            bottom: 50px; }
+            .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row {
+              position: relative;
+              box-sizing: border-box;
+              width: 100%;
+              border: 1px solid #5789e3;
+              background: #fff; }
+              .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li {
+                display: table;
+                border-collapse: collapse;
+                width: 100%;
+                word-break: keep-all; }
+                .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p {
+                  display: table-cell;
+                  padding: 12px 0 14px;
+                  font-size: 16px; }
+                  .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p.p-lbl {
+                    width: 160px;
+                    text-align: center;
+                    vertical-align: middle;
+                    color: #fff;
+                    background: #3669c6; }
+                  .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p.p-txt {
+                    padding-left: 21px;
+                    text-align: left;
+                    color: #666; }
+                .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li.all {
+                  width: 100%; }
+            .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li {
+              float: left;
+              width: 50%; }
+              .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p {
+                position: relative;
+                box-sizing: border-box;
+                border-top: 1px solid #5789e3; }
+                .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p.p-lbl {
+                  border-color: #fff; }
+                .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p.p-all > em {
+                  color: #f21850; }
+                .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p .btn-link {
+                  position: absolute;
+                  display: inline-block;
+                  height: 30px;
+                  top: 50%;
+                  margin: -15px 0 0 28px;
+                  padding: 0 11px;
+                  font-size: 14px;
+                  line-height: 30px;
+                  border-radius: 3px;
+                  background: #e4e4e4; }
+                  .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p .btn-link .ic-rArrow {
+                    position: relative;
+                    padding-left: 5px; }
+                    .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li p .btn-link .ic-rArrow:after {
+                      content: '';
+                      position: relative;
+                      display: inline-block;
+                      width: 6px;
+                      height: 6px;
+                      top: -2px;
+                      right: auto;
+                      bottom: auto;
+                      left: auto;
+                      border: 1px solid #666;
+                      border-top: 0;
+                      border-left: 0;
+                      -webkit-transform: rotate(-45deg);
+                      -ms-transform: rotate(-45deg);
+                      -o-transform: rotate(-45deg);
+                      transform: rotate(-45deg); }
+              .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li.nth-1 p.p-lbl, .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li.nth-2 p.p-lbl {
+                border-top: 0; }
+              .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li.nth-1 p.p-txt, .contents .visit-sec .visit-area .visit-box .visit-tb-box .table-box .tb-row li.nth-2 p.p-txt {
+                border-top: 0; }
+    .contents .visit-sec .room-area {
+      position: relative;
+      box-sizing: border-box;
+      padding: 50px 0 100px;
+      text-align: center; }
+      .contents .visit-sec .room-area .sub-tit {
+        margin: 12px auto 50px; }
+      .contents .visit-sec .room-area .ul-list .li-item {
+        float: left;
+        /*position: relative;*/
+        width: 29.5%;
+        margin-left: 5.45%; }
+        .contents .visit-sec .room-area .ul-list .li-item:first-child {
+          margin-left: 0; }
+        .contents .visit-sec .room-area .ul-list .li-item figure img {
+          width: 100%; }
+        .contents .visit-sec .room-area .ul-list .li-item div[class*='d-row'] {
+          position: relative;
+          text-align: left; }
+          .contents .visit-sec .room-area .ul-list .li-item div[class*='d-row'].d-row-1 {
+            margin-top: 20px;
+            height: 39px; }
+            .contents .visit-sec .room-area .ul-list .li-item div[class*='d-row'].d-row-1 .s-name {
+              position: relative;
+              top: 3px;
+              font-size: 20px;
+              font-weight: bold;
+              line-height: 1.1;
+              letter-spacing: -0.2px;
+              color: #555; }
+            .contents .visit-sec .room-area .ul-list .li-item div[class*='d-row'].d-row-1 .a-btn {
+              z-index: 1;
+              position: absolute;
+              display: inline-block;
+              top: 0;
+              right: 0;
+              padding: 12px;
+              font-size: 14px;
+              line-height: 1.3;
+              letter-spacing: -0.5px;
+              text-align: center;
+              color: #fff;
+              background: #01374f; }
+          .contents .visit-sec .room-area .ul-list .li-item div[class*='d-row'].d-row-2 {
+            font-size: 17px;
+            line-height: 1.4;
+            letter-spacing: -0.2px;
+            color: #666; }
+        .contents .visit-sec .room-area .ul-list .li-item .bxBox {
+          position: relative;
+          box-sizing: border-box; }
+          .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper {
+            position: relative;
+            margin: 0 auto;
+            margin-bottom: 0;
+            border: none;
+            width: 100%;
+            box-shadow: none; }
+            .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-viewport {
+              border: none;
+              box-shadow: none;
+              left: 0;
+              background: none; }
+            .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls .bx-controls-direction {
+              position: absolute;
+              width: 100%;
+              top: 50%; }
+              .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls .bx-controls-direction a {
+                display: block;
+                position: absolute;
+                width: 44px;
+                height: 43px;
+                margin-top: -21.5px; }
+                .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls .bx-controls-direction a.bx-prev {
+                  left: 30px;
+                  background: url(http://img.ocean2you.co.kr/btn_prev2.png) no-repeat center;
+                  background-size: auto 43px; }
+                .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls .bx-controls-direction a.bx-next {
+                  right: 30px;
+                  background: url(http://img.ocean2you.co.kr/btn_next2.png) no-repeat center;
+                  background-size: auto 43px; }
+            .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls .bx-controls-auto {
+              display: none; }
+            .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+              z-index: 99;
+              position: absolute;
+              display: block;
+              width: 100%;
+              bottom: 40px;
+              text-align: center; }
+              .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager .bx-pager-item {
+                width: 12px;
+                padding: 0 10px;
+                text-align: center;
+                vertical-align: middle; }
+                .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager .bx-pager-item .bx-pager-link {
+                  width: 10px;
+                  height: 10px;
+                  margin: 0 auto;
+                  border-radius: 50%;
+                  background: #fff; }
+                  .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager .bx-pager-item .bx-pager-link.active, .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager .bx-pager-item .bx-pager-link:hover {
+                    border: 2px solid #fff;
+                    background: none; }
+          .contents .visit-sec .room-area .ul-list .li-item .bxBox.main .bx-wrapper .bx-controls .bx-controls-direction a.bx-prev {
+            background: url(http://img.ocean2you.co.kr/renew/landing-brand/btn_prev.png) no-repeat center;
+            background-size: auto 43px; }
+          .contents .visit-sec .room-area .ul-list .li-item .bxBox.main .bx-wrapper .bx-controls .bx-controls-direction a.bx-next {
+            background: url(http://img.ocean2you.co.kr/renew/landing-brand/btn_next.png) no-repeat center;
+            background-size: auto 43px; }
+        .contents .visit-sec .room-area .ul-list .li-item .bxBox {
+          z-index: 2;
+          position: absolute;
+          visibility: hidden;
+          overflow: hidden;
+          width: 100%;
+          bottom: 100px;
+          left: 0;
+          border: 5px solid #01374f; }
+          .contents .visit-sec .room-area .ul-list .li-item .bxBox .bx-wrapper img {
+            margin: -1px 0 0 0; }
+          .contents .visit-sec .room-area .ul-list .li-item .bxBox .txt-box {
+            position: absolute;
+            width: 100%;
+            top: 160px;
+            left: 0;
+            text-align: center; }
+            .contents .visit-sec .room-area .ul-list .li-item .bxBox .txt-box p {
+              letter-spacing: -0.2px;
+              color: #fff; }
+              .contents .visit-sec .room-area .ul-list .li-item .bxBox .txt-box p.p1 {
+                font-size: 30px;
+                font-weight: 500; }
+              .contents .visit-sec .room-area .ul-list .li-item .bxBox .txt-box p.p2 {
+                margin-top: 16px;
+                font-size: 20px;
+                line-height: 1.6; }
+          .contents .visit-sec .room-area .ul-list .li-item .bxBox .a-x {
+            position: absolute;
+            display: block;
+            width: 36px;
+            height: 36px;
+            top: 0;
+            right: 0;
+            background: #01374f; }
+            .contents .visit-sec .room-area .ul-list .li-item .bxBox .a-x:before, .contents .visit-sec .room-area .ul-list .li-item .bxBox .a-x:after {
+              content: '';
+              position: absolute;
+              display: inline-block;
+              width: 30px;
+              height: 1px;
+              top: 15px;
+              left: 5px;
+              background: #fff; }
+      .contents .visit-sec .room-area .p-box {
+        margin-top: 29px;
+        padding-top: 20px;
+        border-top: 1px solid #e0e0e0; }
+        .contents .visit-sec .room-area .p-box .p-ps {
+          position: relative;
+          display: inline-block;
+          padding-left: 20px;
+          font-size: 17px;
+          font-weight: 300;
+          line-height: 26px;
+          color: #888;
+          background: url(http://img.ocean2you.co.kr/renew/group/pic_i.png) no-repeat 0 center;
+          background-size: 17px auto; }
+      .contents .visit-sec .room-area .btn-box {
+        display: inline-block;
+        margin-top: 50px;
+        text-align: center; }
+        .contents .visit-sec .room-area .btn-box a {
+          display: inline-block;
+          float: left; }
+          .contents .visit-sec .room-area .btn-box a + a {
+            margin-left: 30px; }
+  .contents .view-sec {
+    padding: 68px 0 100px;
+    text-align: center;
+    background: #e0e0e0; }
+    .contents .view-sec .sub-tit em {
+      color: #f43e3e; }
+    .contents .view-sec .form-area {
+      position: relative;
+      box-sizing: border-box;
+      width: 685px;
+      margin: 0 auto;
+      color: #555; }
+      .contents .view-sec .form-area .f-top {
+        padding: 10px 0;
+        font-size: 14px;
+        text-align: right; }
+        .contents .view-sec .form-area .f-top .i-chk {
+          padding-left: 22px;
+          position: relative; }
+          .contents .view-sec .form-area .f-top .i-chk:before, .contents .view-sec .form-area .f-top .i-chk:after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            width: 3px;
+            top: 50%;
+            background: #5a8be4; }
+          .contents .view-sec .form-area .f-top .i-chk:before {
+            height: 9px;
+            left: 6px;
+            margin-top: -3px;
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+          .contents .view-sec .form-area .f-top .i-chk:after {
+            height: 12px;
+            left: 12px;
+            margin-top: -6px;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg); }
+      .contents .view-sec .form-area .ul-tb {
+        border: 1px solid #ccc;
+        border-left: 0;
+        border-right: 0; }
+        .contents .view-sec .form-area .ul-tb li {
+          position: relative;
+          box-sizing: border-box;
+          display: table;
+          width: 100%;
+          padding: 9px 16px 9px 20px;
+          text-align: left;
+          border-top: 1px solid #ccc; }
+          .contents .view-sec .form-area .ul-tb li:first-child {
+            border-top: 0; }
+          .contents .view-sec .form-area .ul-tb li .lbl {
+            position: relative;
+            box-sizing: border-box;
+            display: inline-block;
+            height: 30px;
+            font-size: 16px;
+            line-height: 30px;
+            width: 74px;
+            padding-left: 10px; }
+            .contents .view-sec .form-area .ul-tb li .lbl.i-chk {
+              position: relative; }
+              .contents .view-sec .form-area .ul-tb li .lbl.i-chk:before, .contents .view-sec .form-area .ul-tb li .lbl.i-chk:after {
+                content: '';
+                display: inline-block;
+                position: absolute;
+                width: 3px;
+                top: 50%;
+                background: #5a8be4; }
+              .contents .view-sec .form-area .ul-tb li .lbl.i-chk:before {
+                height: 9px;
+                left: -5px;
+                margin-top: -3px;
+                -webkit-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+                transform: rotate(-45deg); }
+              .contents .view-sec .form-area .ul-tb li .lbl.i-chk:after {
+                height: 12px;
+                left: 1px;
+                margin-top: -6px;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                transform: rotate(45deg); }
+          .contents .view-sec .form-area .ul-tb li .in-txt {
+            position: relative;
+            box-sizing: border-box;
+            display: inline-block;
+            height: 30px;
+            font-size: 16px;
+            line-height: 30px;
+            width: 200px;
+            padding: 0 6px;
+            vertical-align: middle;
+            border: 1px solid #414141;
+            background: #fff; }
+            .contents .view-sec .form-area .ul-tb li .in-txt + .lbl {
+              margin-left: 35px; }
+            .contents .view-sec .form-area .ul-tb li .in-txt.sel-box {
+              margin-left: 12px;
+              background: #fff url(http://img.ocean2you.co.kr/renew/group/i_dArr.png) no-repeat;
+              background-size: 17px auto;
+              background-position: 173px 9px; }
+            .contents .view-sec .form-area .ul-tb li .in-txt.txt-area {
+              resize: none;
+              width: 565px;
+              height: 50px; }
+          .contents .view-sec .form-area .ul-tb li .phone-box {
+            position: relative;
+            box-sizing: border-box;
+            display: inline-block;
+            height: 30px;
+            font-size: 16px;
+            line-height: 30px; }
+            .contents .view-sec .form-area .ul-tb li .phone-box .in-txt {
+              width: 70px; }
+            .contents .view-sec .form-area .ul-tb li .phone-box .mg- {
+              display: inline-block;
+              width: 10px;
+              height: 1px;
+              margin: 0 3px;
+              line-height: 30px;
+              background: #414141; }
+    .contents .view-sec .btn-box {
+      position: relative;
+      box-sizing: border-box;
+      width: 685px;
+      margin: 25px auto 0;
+      padding: 0 22px; }
+      .contents .view-sec .btn-box [class*="btn-"] {
+        position: relative;
+        box-sizing: border-box;
+        display: block;
+        float: left;
+        width: 48%;
+        height: 74px;
+        vertical-align: middle; }
+      .contents .view-sec .btn-box .btn-com {
+        float: right;
+        font-size: 20px;
+        line-height: 74px;
+        text-align: center;
+        color: #fff;
+        border-radius: 8px;
+        background: #333; }
+  /* footer */
+  .footer {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 39px 0 70px;
+    border-top: 1px solid #888; }
+    .footer .footer-area {
+      position: relative;
+      box-sizing: border-box;
+      width: 1180px;
+      height: auto;
+      margin: 0 auto;
+      padding: 0;
+      /* 문의 영역 */
+      /* 사업자 */
+      /* copy */ }
+      .footer .footer-area .call-area {
+        position: relative;
+        box-sizing: border-box;
+        float: right; }
+        .footer .footer-area .call-area .call-box {
+          position: relative;
+          box-sizing: border-box;
+          float: left;
+          width: 170px;
+          height: 160px;
+          margin-left: 9px;
+          text-align: center;
+          padding: 20px 0 15px;
+          border: 1px solid #ddd;
+          background: #f8f8f8; }
+          .footer .footer-area .call-area .call-box:first-child {
+            margin-left: 0; }
+          .footer .footer-area .call-area .call-box p {
+            text-align: center; }
+            .footer .footer-area .call-area .call-box p.p-1 {
+              font-size: 18px;
+              font-weight: bold;
+              line-height: 25px;
+              color: #666; }
+            .footer .footer-area .call-area .call-box p.p-2 {
+              display: inline-block;
+              font-size: 14px;
+              font-weight: 300;
+              line-height: 25px;
+              letter-spacing: -1px;
+              color: #888; }
+              .footer .footer-area .call-area .call-box p.p-2 span {
+                line-height: 20px;
+                letter-spacing: -0.5px; }
+                .footer .footer-area .call-area .call-box p.p-2 span.bul {
+                  position: relative;
+                  display: block;
+                  padding-left: 7px; }
+                  .footer .footer-area .call-area .call-box p.p-2 span.bul:before {
+                    content: '';
+                    display: inline-block;
+                    position: absolute;
+                    width: 2px;
+                    height: 2px;
+                    top: 50%;
+                    margin: -1px 0 0 -7px;
+                    background: #888; }
+            .footer .footer-area .call-area .call-box p.p-call {
+              padding: 4px 0;
+              font-size: 22px;
+              font-weight: bold;
+              line-height: 25px;
+              color: #666; }
+      .footer .footer-area .adr-area {
+        position: relative;
+        box-sizing: border-box;
+        float: left; }
+        .footer .footer-area .adr-area .adr-box {
+          position: relative;
+          box-sizing: border-box;
+          display: table; }
+          .footer .footer-area .adr-area .adr-box .f-logo {
+            position: relative;
+            display: table-cell;
+            vertical-align: middle;
+            width: 150px; }
+            .footer .footer-area .adr-area .adr-box .f-logo .f-logo-txt {
+              display: block;
+              margin-top: 9px;
+              font-size: 13px;
+              letter-spacing: -1.5px;
+              color: #aaa; }
+          .footer .footer-area .adr-area .adr-box address {
+            position: relative;
+            display: table-cell;
+            vertical-align: middle;
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 18px;
+            color: #888; }
+            .footer .footer-area .adr-area .adr-box address em {
+              display: block;
+              font-size: 15px;
+              font-weight: 500;
+              color: #666; }
+            .footer .footer-area .adr-area .adr-box address .i-l {
+              display: inline-block;
+              position: relative;
+              width: 19px;
+              height: 100%; }
+              .footer .footer-area .adr-area .adr-box address .i-l:before {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 1px;
+                height: 14px;
+                top: 50%;
+                right: auto;
+                bottom: auto;
+                left: 50%;
+                margin: -12px 0 0 0;
+                background: #888; }
+            .footer .footer-area .adr-area .adr-box address .x-i-l {
+              position: relative;
+              display: block; }
+      .footer .footer-area .copy {
+        clear: both;
+        padding-top: 36px;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 25px;
+        text-align: center;
+        color: #888; } }
