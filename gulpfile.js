@@ -1,138 +1,305 @@
-'use strict';
-/**
- * 모듈 호출
- * [del]                - 폴더(디렉토리)/파일 제거
- * [gulp-if]            - 조건 처리
- * [gulp-rename]        - 파일 이름 변경
- * [gulp-jade]          - Jade 컴파일
- * [gulp-plumber]       - 오류 발생해도 watch 업무 지속
- * [gulp-watch]         - 변경된 파일만 처리
- * [gulp-html-prettify] - HTML 구조 읽기 쉽게 변경
- * [gulp-connect-multi] - 웹 서버
- */
-var del      = require('del'),
-	// jade     = require('gulp-jade'),
-	// compass  = require('gulp-compass'),
-	gulp     = require('gulp'),
-	gulpif   = require('gulp-if'),
-	rename   = require('gulp-rename'),
-	fileinclude = require('gulp-file-include'),
-	ejs      = require('gulp-ejs'),
-	sass	 = require('gulp-sass'),
-	plumber  = require('gulp-plumber'),
-	watch    = require('gulp-watch'),
-	prettify = require('gulp-html-prettify'),
-	connect  = require('gulp-connect-multi')(),
-	preen		 = require('preen'),
-	browerSync = require('browser-sync').create(), // browser-sync 호출
+const {
+    src,
+    dest,
+    watch,
+    parallel,
+    series,
+    lastRun
+} = require('gulp');
+const config = require('./config')();
+const imagemin = require('gulp-imagemin');
+const fileinclude = require('gulp-file-include');
+const htmlbeautify = require('gulp-html-beautify');
+const browserSync = require('browser-sync').create();
+const sass = require('gulp-sass');
+sass.compiler = require('node-sass');
+const sourcemaps = require("gulp-sourcemaps");
+const csso = require('gulp-csso');
+const autoprefixer = require('gulp-autoprefixer');
+const del = require('del');
+const spritesmith = require('gulp.spritesmith');
+const replace = require('gulp-replace');
+const copy = require('gulp-copy');
+// const rename = require('gulp-rename');
 
-	// 환경설정 ./config.js
-	config   = require('./config')();
-	
-/**
- * Gulp 업무(Tasks) 정의
- */
+function bSync() {
+    browserSync.init({
+        // watch: true,
+        port: 3030,
+        startPath: './main/',
+        server: {
+            baseDir: './dist'
+        }
+    });
+};
 
-// 기본
-// gulp.task('default', ['template', 'sass', 'js', 'connect', 'watch']);
-gulp.task('default', ['browserSync', 'watch']);
+function bSyncTest() {
+    browserSync.init({
+        port: 3050,
+        // watch: true,
+        server: {
+            baseDir: './dist'
+        }
+    });
+};
 
-gulp.task('prepare', ['preen', 'bower:copy']);
+function template() {
+    return src(config.template.src, {
+            since: lastRun(template)
+        })
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+            // basepath: '@root'
+        }))
+        .pipe(htmlbeautify(config.htmlbeautify))
+        .pipe(dest(config.template.dest))
+        .pipe(browserSync.stream({
+            match: '**/*.html'
+        }));
+};
 
-gulp.task('browserSync', ['template', 'sass', 'js'], function() {
-	return browerSync.init({
-		server: {
-			baseDir: './dist'
-		}
-	});
-});
+function templateAll() {
+    return src([config.template.src])
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+            // basepath: '@root'
+        }))
+        .pipe(htmlbeautify(config.htmlbeautify))
+        .pipe(dest(config.template.dest))
+        .pipe(browserSync.stream({
+            match: '**/*.html'
+        }));
+};
 
-// 관찰
-gulp.task('watch', [], function(){
-	// HTML 템플릿 업무 관찰
-	watch([config.template.src, config.template.parts], function() {
-		gulp.start('template');
-	});
-	// Sass 업무 관찰
-	watch(config.sass.src, function() {
-		gulp.start('sass');
-	});
-	// Js 업무 관찰
-	watch(config.js.src, function() {
-		gulp.start('js');
-	});
-});
+function templateM() {
+    return src(config.template.src_m, {
+            since: lastRun(template)
+        })
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+            // basepath: '@root'
+        }))
+        .pipe(htmlbeautify(config.htmlbeautify))
+        .pipe(dest(config.template.dest_m))
+        .pipe(browserSync.stream({
+            match: '**/*.html'
+        }));
+};
 
-// 제거
-gulp.task('clean:all', function(){
-	del(config.dev);
-});
-gulp.task('clean:css', function(){
-	del(config.sass.dest);
-});
-gulp.task('clean:js', function(){
-	del(config.js.dest);
-});
+function templateMAll() {
+    return src(config.template.src_m)
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+            // basepath: '@root'
+        }))
+        .pipe(htmlbeautify(config.htmlbeautify))
+        .pipe(dest(config.template.dest_m))
+        .pipe(browserSync.stream({
+            match: '**/*.html'
+        }));
+};
+// {outputStyle: nested} expanded, compact, compressed
+function sassDev() {
+    return src(config.sass.src)
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            outputStyle: 'compressed'
+        }).on('error', sass.logError))
+        .pipe(autoprefixer())
+        .pipe(
+            sourcemaps.write(".", {
+                includeContent: false,
+                sourceRoot: __dirname
+            })
+        )
+        .pipe(dest(config.sass.dest))
+        .pipe(browserSync.stream({
+            match: '**/*.css'
+        }));
+};
 
-// Bower 패키지에서 필요한 파일만 골라내기(Preen)
-gulp.task('preen', function(cb) {
-	preen.preen({}, cb);
-});
-// Bower 패키지 복사
-gulp.task('bower:copy', function() {
-	// susy
-	gulp.src(config.bower.susy.src)
-		.pipe( gulp.dest(config.bower.susy.dest) );
-	gulp.src(config.bower.breakpoint.src)
-		.pipe( gulp.dest(config.bower.breakpoint.dest) );
-	// fontawesome
-	gulp.src(config.bower.fontawesome.src)
-		.pipe( gulp.dest(config.bower.fontawesome.dest) );
-	// jquery, modernizr, detectizr
-	gulp.src(config.bower.others.src)
-		.pipe( gulp.dest(config.bower.others.dest) );
-});
+function sassDevAll() {
+    return src([config.sass.src, config.sass.parts])
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            outputStyle: 'compressed'
+        }).on('error', sass.logError))
+        .pipe(autoprefixer())
+        .pipe(
+            sourcemaps.write(".", {
+                includeContent: false,
+                sourceRoot: __dirname
+            })
+        )
+        .pipe(dest(config.sass.dest))
+        .pipe(browserSync.stream({
+            match: '**/*.css'
+        }));
+};
 
-// 웹 서버
-// gulp.task('connect', connect.server( config.sev ) );
+function sassPrd() {
+    return src(config.sass.src, {
+            since: lastRun(sass)
+        })
+        .pipe(sass({
+            outputStyle: 'compressed'
+        }).on('error', sass.logError))
+        .pipe(autoprefixer())
+        .pipe(csso())
+        .pipe(dest(config.sass.dest))
+        .pipe(browserSync.stream({
+            match: '**/*.css'
+        }));
+};
 
-// HTML 템플릿(template)
-gulp.task('template', function(){
-	gulp.src(config.template.src)
-		.pipe( plumber() )
-//		.pipe( jade() )
-		.pipe( fileinclude({
-			prefix: '@@',
-			basepath: '@file'
-		}))
-		.pipe( prettify( config.htmlPrettify) )
-		.pipe( gulp.dest( config.template.dest ) )
-		// .pipe( connect.reload() );
-		.pipe(browerSync.reload({stream: true}));
-});
+function css() {
+    return src(config.css.src, {
+            since: lastRun(css)
+        })
+        // .pipe(autoprefixer())
+        // .pipe(csso())
+        // .pipe(rename({suffix: '.min'}))
+        .pipe(dest(config.css.dest))
+        .pipe(browserSync.stream({
+            match: '**/*.css'
+        }));
+};
 
-gulp.task('compass', function() {
-	gulp.src( config.sass.src )
-		.pipe( plumber() )
-		.pipe( compass({
-			css : config.sass.dest,
-			sass: config.sass.compassSrc,
-			style: 'compact' // nested, expanded, compact, compressed
-		}) )
-		.pipe( gulp.dest( config.sass.dest ) )
-		.pipe(browerSync.reload({stream: true}));
-});
-gulp.task('sass', function() {
-	gulp.src( config.sass.src )
-		.pipe( plumber() )
-		.pipe( sass().on('error', sass.logError))
-		.pipe( gulp.dest( config.sass.dest ) )
-		.pipe(browerSync.reload({stream: true}));
-});
+function js() {
+    return src(config.js.src, {
+            since: lastRun(js)
+        })
+        .pipe(dest(config.js.dest))
+        .pipe(browserSync.stream({
+            match: '**/*.js'
+        }));
+};
 
-gulp.task('js', function(){
-	gulp.src(config.js.src)
-		.pipe( plumber() )
-		.pipe( gulp.dest(config.js.dest) )
-		.pipe(browerSync.reload({stream: true}));
-});
+function img() {
+    return src(config.img.src, {
+            since: lastRun(img)
+        })
+        .pipe(imagemin())
+        .pipe(dest(config.img.dest));
+}
+
+function sprite(cb) {
+    // var spriteData = src('src/img/sprite/login/*') // custom grouping
+    var spriteData = src(config.img.src_sprite)
+        .pipe(spritesmith({
+            imgName: 'sprite.png',
+            padding: 6,
+            cssName: 'sprite.css'
+        }));
+    spriteData.img.pipe(dest(config.img.dest + '/sprite'));
+    // spriteData.css.pipe(dest(config.sass.dest + '/sprite'));
+    spriteData.css.pipe(dest(config.sass.src_sprite)); // 생성 후 scss로 변경
+    cb();
+};
+
+function etc() {
+    return src(config.etc.src, {
+            since: lastRun(etc)
+        })
+        .pipe(dest(config.etc.dest));
+}
+
+function watching(cb) {
+    watch([config.template.src], template);
+    watch([config.template.parts], templateAll);
+    watch([config.template.src_m], templateM);
+    watch([config.template.parts_m], templateMAll);
+    watch(config.sass.src, sassDev)
+    watch(config.sass.parts, sassDevAll)
+    watch(config.css.src, css)
+    watch(config.js.src, js)
+    watch(config.img.src, img);
+    watch(config.etc.src, etc);
+    cb();
+};
+
+// util
+function cleanDist(cb) {
+    del(config.dev);
+    cb();
+};
+
+function cleanTest(cb) {
+    del(config.test);
+    cb();
+};
+
+function cleanTemplate(cb) {
+    // del([config.template.dest, config.template.dest_m]);
+    del([config.template.dest]);
+    cb();
+};
+
+function cleanParts(cb) {
+    // del([config.template.dest_parts, config.template.dest_m_parts]);
+    del([config.template.dest_parts]);
+    cb();
+};
+
+function cleanSass(cb) {
+    del(config.sass.dest);
+    cb();
+};
+
+function cleanCss(cb) {
+    del(config.css.dest);
+    cb();
+};
+
+function cleanJs(cb) {
+    del(config.js.dest);
+    cb();
+};
+
+function cleanImg(cb) {
+    del(config.img.dest);
+    cb();
+};
+
+const assets_local = '/assets';
+const assets_server = 'http://toxnsldxn.cafe24.com/template/assets';
+const views_local = '/views';
+const views_server = 'http://toxnsldxn.cafe24.com/template/views';
+
+function copyTest() {
+    return src(config.dev + '/**/*')
+        .pipe(dest(config.test));
+};
+
+function testPathServer() {
+    return src(config.test + '/**/*')
+        .pipe(replace(assets_local, assets_server))
+        .pipe(replace(views_local, views_server))
+        .pipe(dest(config.test));
+};
+
+function testPathLocal() {
+    return src(config.test + '/**/*')
+        .pipe(replace(assets_server, assets_local))
+        .pipe(replace(views_server, views_local))
+        .pipe(dest(config.test));
+};
+
+exports.cleanTemplate = cleanTemplate;
+exports.cleanDist = cleanDist;
+exports.cleanTest = cleanTest;
+exports.cleanParts = cleanParts;
+exports.img = img;
+exports.sprite = sprite;
+exports.etc = etc;
+exports.testPathServer = testPathServer;
+exports.testPathLocal = testPathLocal;
+exports.default = parallel(bSync, watching);
+exports.serve = parallel(series(parallel(template), sassDev, css, js, img, etc, bSync), watching);
+exports.build = parallel(series(parallel(template), sassDev, css, js, img, etc, bSync), watching);
+exports.default = parallel(bSync, watching);
+exports.test = series(parallel(template), sassPrd, css, js, img, etc, copyTest, testPathServer, bSyncTest);
